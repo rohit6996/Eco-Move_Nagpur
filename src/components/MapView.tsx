@@ -49,7 +49,7 @@ export default function MapView({
             key={l.id}
             positions={l.points.map((p) => [p.lat, p.lon] as [number, number])}
             pathOptions={{
-              color: l.mode === "metro" ? MODE_COLOR.metro : MODE_COLOR.bus,
+              color: l.mode === "metro" ? MODE_COLOR['metro'] : MODE_COLOR['bus'],
               weight: l.mode === "metro" ? 3 : 1.5,
               opacity: 0.25,
             }}
