@@ -28,7 +28,11 @@ function Fit({ journey }: { journey: Journey | null }) {
   return null;
 }
 
-function ClickHandler({ onClick }: { onClick?: (p: { lat: number; lon: number }) => void }) {
+function ClickHandler({
+  onClick,
+}: {
+  onClick?: ((p: { lat: number; lon: number }) => void) | undefined;
+}) {
   useMapEvents({
     click(e) {
       onClick?.({ lat: e.latlng.lat, lon: e.latlng.lng });
@@ -48,7 +52,7 @@ export default function MapView({
   origin?: { lat: number; lon: number } | null;
   destination?: { lat: number; lon: number } | null;
   showNetwork: boolean;
-  onMapClick?: (p: { lat: number; lon: number }) => void;
+  onMapClick?: ((p: { lat: number; lon: number }) => void) | undefined;
 }) {
   return (
     <MapContainer
