@@ -119,15 +119,15 @@ function walkEdge(from: LatLng, to: LatLng, distanceM?: number) {
       });
       for (const j of [i - 1, i + 1]) {
         if (j < 0 || j >= line.placeIds.length) continue;
-        const a = line.points[i];
-        const b = line.points[j];
+        const a = line.points[i]!;
+        const b = line.points[j]!;
         const d = haversine(a.lat, a.lon, b.lat, b.lon) * 1.2;
         addEdge(rideNode(line.id, i), {
           to: rideNode(line.id, j),
           kind: "ride",
           lineId: line.id,
-          fromPlace: line.placeIds[i],
-          toPlace: line.placeIds[j],
+          fromPlace: line.placeIds[i]!,
+          toPlace: line.placeIds[j]!,
           distanceM: d,
           timeMin: (d / 1000 / speed) * 60 + 0.4,
           co2g: (d / 1000) * co2,
@@ -140,23 +140,25 @@ function walkEdge(from: LatLng, to: LatLng, distanceM?: number) {
   const list = net.placeList;
   for (let i = 0; i < list.length; i++) {
     for (let j = i + 1; j < list.length; j++) {
-      const d = haversine(list[i].lat, list[i].lon, list[j].lat, list[j].lon);
+      const A = list[i]!;
+      const B = list[j]!;
+      const d = haversine(A.lat, A.lon, B.lat, B.lon);
       if (d > PARAMS.maxTransferWalkM) continue;
-      const { d: wd, t } = walkEdge(list[i], list[j], d * 1.25);
-      addEdge(placeNode(list[i].id), {
-        to: placeNode(list[j].id),
+      const { d: wd, t } = walkEdge(A, B, d * 1.25);
+      addEdge(placeNode(A.id), {
+        to: placeNode(B.id),
         kind: "walk",
-        fromPlace: list[i].id,
-        toPlace: list[j].id,
+        fromPlace: A.id,
+        toPlace: B.id,
         distanceM: wd,
         timeMin: t,
         co2g: 0,
       });
-      addEdge(placeNode(list[j].id), {
-        to: placeNode(list[i].id),
+      addEdge(placeNode(B.id), {
+        to: placeNode(A.id),
         kind: "walk",
-        fromPlace: list[j].id,
-        toPlace: list[i].id,
+        fromPlace: B.id,
+        toPlace: A.id,
         distanceM: wd,
         timeMin: t,
         co2g: 0,
@@ -243,8 +245,8 @@ function search(origin: LatLng, destination: LatLng, pref: Preference, banLine?:
 
   while (queue.length) {
     let bi = 0;
-    for (let i = 1; i < queue.length; i++) if (queue[i].c < queue[bi].c) bi = i;
-    const { n, c } = queue.splice(bi, 1)[0];
+    for (let i = 1; i < queue.length; i++) if (queue[i]!.c < queue[bi]!.c) bi = i;
+    const { n, c } = queue.splice(bi, 1)[0]!;
     if (done.has(n)) continue;
     done.add(n);
     if (n === DEST) break;
@@ -304,7 +306,7 @@ function toJourney(
   let i = 0;
   const chain = res.chain;
   while (i < chain.length) {
-    const e = chain[i].edge;
+    const e = chain[i]!.edge;
     if (e.kind === "walk") {
       const fromP = e.fromPlace ? net.places.get(e.fromPlace) : undefined;
       const toP = e.toPlace ? net.places.get(e.toPlace) : undefined;
@@ -331,8 +333,8 @@ function toJourney(
       const path: { lat: number; lon: number }[] = [];
       let boardPlace = "";
       let lastPlace = "";
-      while (j < chain.length && chain[j].edge.kind === "ride") {
-        const r = chain[j].edge;
+      while (j < chain.length && chain[j]!.edge.kind === "ride") {
+        const r = chain[j]!.edge;
         if (!boardPlace) {
           boardPlace = label(r.fromPlace, line.name);
           stops.push(boardPlace);
@@ -348,7 +350,7 @@ function toJourney(
         if (p2) path.push(pt(p2));
         j++;
       }
-      if (j < chain.length && chain[j].edge.kind === "alight") j++;
+      if (j < chain.length && chain[j]!.edge.kind === "alight") j++;
       if (dist > 0) {
         legs.push({
           mode: line.mode,
