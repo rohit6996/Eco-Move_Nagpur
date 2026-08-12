@@ -1,4 +1,12 @@
-import { MapContainer, TileLayer, Polyline, CircleMarker, Tooltip, useMap } from "react-leaflet";
+import {
+  MapContainer,
+  TileLayer,
+  Polyline,
+  CircleMarker,
+  Tooltip,
+  useMap,
+  useMapEvents,
+} from "react-leaflet";
 import { useEffect } from "react";
 import "leaflet/dist/leaflet.css";
 import type { Journey } from "@/lib/routing";
@@ -20,16 +28,27 @@ function Fit({ journey }: { journey: Journey | null }) {
   return null;
 }
 
+function ClickHandler({ onClick }: { onClick?: (p: { lat: number; lon: number }) => void }) {
+  useMapEvents({
+    click(e) {
+      onClick?.({ lat: e.latlng.lat, lon: e.latlng.lng });
+    },
+  });
+  return null;
+}
+
 export default function MapView({
   journey,
   origin,
   destination,
   showNetwork,
+  onMapClick,
 }: {
   journey: Journey | null;
   origin?: { lat: number; lon: number } | null;
   destination?: { lat: number; lon: number } | null;
   showNetwork: boolean;
+  onMapClick?: (p: { lat: number; lon: number }) => void;
 }) {
   return (
     <MapContainer
@@ -107,6 +126,7 @@ export default function MapView({
           <Tooltip>Destination</Tooltip>
         </CircleMarker>
       )}
+      <ClickHandler onClick={onMapClick} />
       <Fit journey={journey} />
     </MapContainer>
   );
