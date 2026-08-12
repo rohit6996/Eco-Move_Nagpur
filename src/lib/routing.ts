@@ -381,6 +381,10 @@ function toJourney(
       prev.path = [...prev.path, ...leg.path.slice(1)];
     } else merged.push({ ...leg });
   }
+  // drop negligible walking legs (origin/destination already at the stop)
+  for (let k = merged.length - 1; k >= 0; k--) {
+    if (merged[k]!.mode === "walk" && merged[k]!.distanceM < 30) merged.splice(k, 1);
+  }
   const transitLegs = merged.filter((l) => l.mode !== "walk");
   return {
     legs: merged,
