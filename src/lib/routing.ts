@@ -17,15 +17,17 @@ export const PARAMS = {
 
 export const PREFERENCE_WEIGHTS: Record<
   Preference,
-  { time: number; walk: number; transfer: number; co2: number }
+  { time: number; walk: number; transfer: number; co2: number; busPenalty: number }
 > = {
-  // cost = time(min) * w.time + walk(km)*w.walk + transfers*w.transfer + co2(kg)*w.co2
-  balanced: { time: 1, walk: 8, transfer: 6, co2: 4 },
-  fastest: { time: 1, walk: 1, transfer: 1, co2: 0 },
-  least_walk: { time: 0.4, walk: 60, transfer: 2, co2: 0 },
-  fewest_transfers: { time: 0.5, walk: 4, transfer: 45, co2: 0 },
-  low_co2: { time: 0.4, walk: 2, transfer: 3, co2: 60 },
+  // cost = time(min)*w.time + walk(km)*w.walk + transfers*w.transfer + co2(kg)*w.co2
+  //        + bus(km)*w.busPenalty   (metro is preferred whenever it is available)
+  balanced: { time: 1, walk: 8, transfer: 6, co2: 4, busPenalty: 3.5 },
+  fastest: { time: 1, walk: 1, transfer: 1, co2: 0, busPenalty: 1.5 },
+  least_walk: { time: 0.4, walk: 60, transfer: 2, co2: 0, busPenalty: 1.5 },
+  fewest_transfers: { time: 0.5, walk: 4, transfer: 45, co2: 0, busPenalty: 1.5 },
+  low_co2: { time: 0.4, walk: 2, transfer: 3, co2: 60, busPenalty: 4 },
 };
+
 
 export interface LatLng {
   lat: number;
@@ -60,6 +62,7 @@ interface Metrics {
   timeMin: number;
   walkM: number;
   transitM: number;
+  busM: number;
   boardings: number;
   co2g: number;
 }
@@ -67,6 +70,7 @@ interface Metrics {
 interface Edge {
   to: string;
   kind: "walk" | "board" | "alight" | "ride";
+  mode?: "bus" | "metro";
   lineId?: string;
   fromPlace?: string;
   toPlace?: string;
@@ -125,6 +129,7 @@ function walkEdge(from: LatLng, to: LatLng, distanceM?: number) {
         addEdge(rideNode(line.id, i), {
           to: rideNode(line.id, j),
           kind: "ride",
+          mode: line.mode,
           lineId: line.id,
           fromPlace: line.placeIds[i]!,
           toPlace: line.placeIds[j]!,
@@ -179,7 +184,11 @@ function cost(m: Metrics, pref: Preference) {
   const w = PREFERENCE_WEIGHTS[pref];
   const transfers = Math.max(0, m.boardings - 1);
   return (
-    m.timeMin * w.time + (m.walkM / 1000) * w.walk + transfers * w.transfer + (m.co2g / 1000) * w.co2
+    m.timeMin * w.time +
+    (m.walkM / 1000) * w.walk +
+    transfers * w.transfer +
+    (m.co2g / 1000) * w.co2 +
+    (m.busM / 1000) * w.busPenalty
   );
 }
 
@@ -238,7 +247,7 @@ function search(origin: LatLng, destination: LatLng, pref: Preference, banLine?:
 
   const best = new Map<string, number>([[ORIGIN, 0]]);
   const trace = new Map<string, Trace>([
-    [ORIGIN, { m: { timeMin: 0, walkM: 0, transitM: 0, boardings: 0, co2g: 0 } }],
+    [ORIGIN, { m: { timeMin: 0, walkM: 0, transitM: 0, busM: 0, boardings: 0, co2g: 0 } }],
   ]);
   const queue: { n: string; c: number }[] = [{ n: ORIGIN, c: 0 }];
   const done = new Set<string>();
@@ -257,6 +266,7 @@ function search(origin: LatLng, destination: LatLng, pref: Preference, banLine?:
         timeMin: cur.m.timeMin + e.timeMin,
         walkM: cur.m.walkM + (e.kind === "walk" ? e.distanceM : 0),
         transitM: cur.m.transitM + (e.kind === "ride" ? e.distanceM : 0),
+        busM: cur.m.busM + (e.kind === "ride" && e.mode === "bus" ? e.distanceM : 0),
         boardings: cur.m.boardings + (e.kind === "board" ? 1 : 0),
         co2g: cur.m.co2g + e.co2g,
       };
