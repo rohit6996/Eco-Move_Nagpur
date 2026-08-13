@@ -17,15 +17,17 @@ export const PARAMS = {
 
 export const PREFERENCE_WEIGHTS: Record<
   Preference,
-  { time: number; walk: number; transfer: number; co2: number }
+  { time: number; walk: number; transfer: number; co2: number; metroBonus: number }
 > = {
-  // cost = time(min) * w.time + walk(km)*w.walk + transfers*w.transfer + co2(kg)*w.co2
-  balanced: { time: 1, walk: 8, transfer: 6, co2: 4 },
-  fastest: { time: 1, walk: 1, transfer: 1, co2: 0 },
-  least_walk: { time: 0.4, walk: 60, transfer: 2, co2: 0 },
-  fewest_transfers: { time: 0.5, walk: 4, transfer: 45, co2: 0 },
-  low_co2: { time: 0.4, walk: 2, transfer: 3, co2: 60 },
+  // cost = time(min)*w.time + walk(km)*w.walk + transfers*w.transfer + co2(kg)*w.co2
+  //        - metro(km)*w.metroBonus   (metro is preferred whenever it is available)
+  balanced: { time: 1, walk: 8, transfer: 6, co2: 4, metroBonus: 3.5 },
+  fastest: { time: 1, walk: 1, transfer: 1, co2: 0, metroBonus: 1.5 },
+  least_walk: { time: 0.4, walk: 60, transfer: 2, co2: 0, metroBonus: 1.5 },
+  fewest_transfers: { time: 0.5, walk: 4, transfer: 45, co2: 0, metroBonus: 1.5 },
+  low_co2: { time: 0.4, walk: 2, transfer: 3, co2: 60, metroBonus: 4 },
 };
+
 
 export interface LatLng {
   lat: number;
