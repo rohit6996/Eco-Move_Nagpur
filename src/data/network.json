@@ -625,8 +625,8 @@
     },
     {
      "name": "Lokmanya Nagar Metro Station",
-     "lat": 21.110342,
-     "lon": 79.001254
+     "lat": 21.110407497751023,
+     "lon": 79.00125323240383
     }
    ]
   },
@@ -1150,8 +1150,8 @@
     },
     {
      "name": "Lokmanya Nagar Metro Station",
-     "lat": 21.110342,
-     "lon": 79.001254
+     "lat": 21.110407497751023,
+     "lon": 79.00125323240383
     },
     {
      "name": "Mahindra Colony",
@@ -2347,8 +2347,8 @@
    "stations": [
     {
      "name": "Lokmanya Nagar",
-     "lat": 21.11895856014046,
-     "lon": 79.01971953077555
+     "lat": 21.110407497751023,
+     "lon": 79.00125323240383
     },
     {
      "name": "Bansi Nagar",
