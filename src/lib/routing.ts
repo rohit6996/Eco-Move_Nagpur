@@ -1,4 +1,9 @@
 import { buildNetwork, haversine, type Place, type TransitNetwork } from "./network";
+import { walkRoute, clearWalkCache } from "./ors";
+
+// Purge any cached ORS results from a previous session / preference change
+clearWalkCache();
+
 
 export type Preference = "balanced" | "fastest" | "least_walk" | "fewest_transfers" | "low_co2";
 
@@ -46,6 +51,8 @@ export interface Leg {
   co2g: number;
   stops?: string[];
   path: { lat: number; lon: number }[];
+  /** Average headway in minutes — only set for bus/metro legs */
+  frequencyMin?: number;
 }
 
 export interface Journey {
@@ -110,7 +117,7 @@ function walkEdge(from: LatLng, to: LatLng, distanceM?: number) {
         kind: "board",
         lineId: line.id,
         distanceM: 0,
-        timeMin: wait + PARAMS.transferPenaltyMin,
+        timeMin: wait,
         co2g: 0,
       });
       addEdge(rideNode(line.id, i), {
@@ -262,8 +269,10 @@ function search(origin: LatLng, destination: LatLng, pref: Preference, banLine?:
     const cur = trace.get(n)!;
     for (const e of edgesOf(n)) {
       if (done.has(e.to)) continue;
+      // Add transfer penalty only for real transfers (second+ boarding), not the first one
+      const transferPenalty = e.kind === "board" && cur.m.boardings > 0 ? PARAMS.transferPenaltyMin : 0;
       const m: Metrics = {
-        timeMin: cur.m.timeMin + e.timeMin,
+        timeMin: cur.m.timeMin + e.timeMin + transferPenalty,
         walkM: cur.m.walkM + (e.kind === "walk" ? e.distanceM : 0),
         transitM: cur.m.transitM + (e.kind === "ride" ? e.distanceM : 0),
         busM: cur.m.busM + (e.kind === "ride" && e.mode === "bus" ? e.distanceM : 0),
@@ -372,6 +381,7 @@ function toJourney(
           co2g: co2,
           stops,
           path,
+          frequencyMin: line.frequencyMin,
         });
       }
       i = j;
@@ -425,7 +435,7 @@ export function planJourney(
   const journeys = [best];
 
   // alternatives: ban each used line once, plus other preferences
-  const usedLines = best.legs.filter((l) => l.mode !== "walk").map((l) => l.line);
+  const usedLines = best.legs.filter((l) => l.mode !== "walk" && l.line != null).map((l) => l.line as string);
   const seen = new Set([signature(best)]);
   const candidates: (Journey | null)[] = [];
   for (const line of net.lines.values()) {
@@ -497,3 +507,61 @@ export const allLines = [...net.lines.values()].map((l) => ({
   mode: l.mode,
   points: l.points,
 }));
+
+/** All unique bus-stop places (for the optional overlay layer). */
+export const busStops = searchablePlaces.filter((p) => p.modes.includes("bus"));
+
+/** All unique metro-station places (for the optional overlay layer). */
+export const metroStations = searchablePlaces.filter((p) => p.modes.includes("metro"));
+
+/**
+ * Takes a completed Journey (with straight-line walk legs) and enriches each
+ * walk leg by calling the ORS foot-walking API to get the real road path.
+ *
+ * - Replaces `distanceM`, `timeMin`, and `path` on walk legs with ORS values.
+ * - Falls back silently to the original haversine estimate on any API error.
+ * - Transit legs are returned unchanged.
+ * - All walk legs are fetched in parallel for speed.
+ */
+export async function enrichWalkLegs(
+  journey: Journey,
+  origin: LatLng,
+  destination: LatLng,
+): Promise<Journey> {
+  const enriched = await Promise.all(
+    journey.legs.map(async (leg): Promise<Leg> => {
+      if (leg.mode !== "walk") return leg;
+
+      // Determine real start/end coordinates for this walk leg
+      const from =
+        leg.path.length > 0
+          ? leg.path[0]!
+          : { lat: origin.lat, lon: origin.lon };
+      const to =
+        leg.path.length > 1
+          ? leg.path[leg.path.length - 1]!
+          : { lat: destination.lat, lon: destination.lon };
+
+      const ors = await walkRoute(from, to);
+      if (!ors) return leg; // fallback: keep original straight-line leg
+
+      return {
+        ...leg,
+        distanceM: ors.distanceM,
+        timeMin: ors.timeMin,
+        path: ors.path,
+      };
+    }),
+  );
+
+  // Recompute journey-level totals from enriched legs
+  return {
+    ...journey,
+    legs: enriched,
+    totalDistanceM: enriched.reduce((s, l) => s + l.distanceM, 0),
+    totalTimeMin: enriched.reduce((s, l) => s + l.timeMin, 0),
+    walkDistanceM: enriched
+      .filter((l) => l.mode === "walk")
+      .reduce((s, l) => s + l.distanceM, 0),
+  };
+}

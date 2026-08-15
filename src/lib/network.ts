@@ -1,4 +1,5 @@
 import raw from "@/data/network.json";
+import { getFrequencyMin } from "./frequencies";
 
 export type Mode = "walk" | "bus" | "metro";
 
@@ -39,6 +40,8 @@ export interface RouteLine {
   /** ordered place ids */
   placeIds: string[];
   points: RawStop[];
+  /** Average headway between departures in minutes */
+  frequencyMin: number;
 }
 
 export interface TransitNetwork {
@@ -82,7 +85,7 @@ export function buildNetwork(data: RawNetwork = raw as unknown as RawNetwork): T
     const key = norm(stop.name);
     const candidates = byName.get(key) ?? [];
     for (const c of candidates) {
-      if (haversine(c.lat, c.lon, stop.lat, stop.lon) <= 1500) return c;
+      if (haversine(c.lat, c.lon, stop.lat, stop.lon) <= CLUSTER_M) return c;
     }
     // also merge different names that are physically the same spot
     for (const p of placeList) {
@@ -112,18 +115,33 @@ export function buildNetwork(data: RawNetwork = raw as unknown as RawNetwork): T
       p.routes.add(id);
       return p.id;
     });
-    lines.set(id, { id, mode: "bus", name: r.route, placeIds, points: r.stops });
+    lines.set(id, {
+      id,
+      mode: "bus",
+      name: r.route,
+      placeIds,
+      points: r.stops,
+      frequencyMin: getFrequencyMin(r.route),
+    });
   });
 
   data.metro.forEach((l, i) => {
     const id = `metro:${i}`;
+    const lineName = `${l.line} Line`;
     const placeIds = l.stations.map((s) => {
       const p = getPlace(s, "metro");
       p.modes.add("metro");
       p.routes.add(id);
       return p.id;
     });
-    lines.set(id, { id, mode: "metro", name: `${l.line} Line`, placeIds, points: l.stations });
+    lines.set(id, {
+      id,
+      mode: "metro",
+      name: lineName,
+      placeIds,
+      points: l.stations,
+      frequencyMin: getFrequencyMin(lineName),
+    });
   });
 
   return { places, lines, placeList };

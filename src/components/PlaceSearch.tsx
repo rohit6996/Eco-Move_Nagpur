@@ -1,6 +1,27 @@
-import { useMemo, useState } from "react";
-import { searchPlaces, type SearchablePlace } from "@/lib/routing";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Input } from "@/components/ui/input";
+import {
+  Building2,
+  Bus,
+  Compass,
+  GraduationCap,
+  Hospital,
+  Hotel,
+  Loader2,
+  LocateFixed,
+  MapPin,
+  Palmtree,
+  ShoppingBag,
+  Sparkles,
+  TrainFront,
+  Trees,
+  X,
+} from "lucide-react";
+import {
+  searchLocalPlaces,
+  searchOnlinePlaces,
+  type UnifiedPlaceResult,
+} from "@/lib/placesSearch";
 
 export interface Point {
   lat: number;
@@ -8,68 +29,314 @@ export interface Point {
   name: string;
 }
 
+function PlaceIcon({ place }: { place: UnifiedPlaceResult }) {
+  if (place.kind === "metro") {
+    const isBlue = (place.lineName ?? place.name).toLowerCase().includes("blue");
+    return (
+      <div
+        className="flex size-7 shrink-0 items-center justify-center rounded-lg shadow-xs"
+        style={{
+          backgroundColor: isBlue ? "#00aaff20" : "#ff6a0020",
+          color: isBlue ? "#0088cc" : "#e05500",
+        }}
+      >
+        <TrainFront className="size-4" />
+      </div>
+    );
+  }
+
+  if (place.kind === "bus") {
+    return (
+      <div className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-bus/15 text-bus shadow-xs">
+        <Bus className="size-4" />
+      </div>
+    );
+  }
+
+  if (place.categoryLabel === "Mall") {
+    return (
+      <div className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-pink-500/15 text-pink-600 shadow-xs dark:text-pink-400">
+        <ShoppingBag className="size-4" />
+      </div>
+    );
+  }
+
+  if (place.categoryLabel === "Resort") {
+    return (
+      <div className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-teal-500/15 text-teal-600 shadow-xs dark:text-teal-400">
+        <Palmtree className="size-4" />
+      </div>
+    );
+  }
+
+  if (place.categoryLabel === "Lake") {
+    return (
+      <div className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-cyan-500/15 text-cyan-600 shadow-xs dark:text-cyan-400">
+        <Trees className="size-4" />
+      </div>
+    );
+  }
+
+  if (place.categoryLabel === "College") {
+    return (
+      <div className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-purple-500/15 text-purple-600 shadow-xs dark:text-purple-400">
+        <GraduationCap className="size-4" />
+      </div>
+    );
+  }
+
+  if (place.categoryLabel === "Hospital") {
+    return (
+      <div className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-rose-500/15 text-rose-600 shadow-xs dark:text-rose-400">
+        <Hospital className="size-4" />
+      </div>
+    );
+  }
+
+  if (place.categoryLabel === "Transit") {
+    return (
+      <div className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-blue-500/15 text-blue-600 shadow-xs dark:text-blue-400">
+        <Compass className="size-4" />
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-secondary text-muted-foreground shadow-xs">
+      <MapPin className="size-4 text-primary" />
+    </div>
+  );
+}
+
 export default function PlaceSearch({
-  label,
   value,
   onChange,
   placeholder,
   dot,
+  onFocus,
+  isPickingMap = false,
+  onLocate,
+  locating = false,
 }: {
-  label: string;
+  label?: string | undefined;
   value: Point | null;
   onChange: (p: Point | null) => void;
   placeholder: string;
   dot: string;
+  onFocus?: (() => void) | undefined;
+  isPickingMap?: boolean | undefined;
+  onLocate?: (() => void) | undefined;
+  locating?: boolean | undefined;
 }) {
   const [q, setQ] = useState("");
   const [open, setOpen] = useState(false);
-  const results = useMemo<SearchablePlace[]>(() => searchPlaces(q), [q]);
+  const [onlineResults, setOnlineResults] = useState<UnifiedPlaceResult[]>([]);
+  const [isSearchingOnline, setIsSearchingOnline] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  // Synchronous instant local results (POIs + bus stops + metro stations)
+  const localResults = useMemo<UnifiedPlaceResult[]>(() => searchLocalPlaces(q, 8), [q]);
+
+  // Debounced live online geocoding
+  useEffect(() => {
+    const trimmed = q.trim();
+    if (trimmed.length < 2) {
+      setOnlineResults([]);
+      setIsSearchingOnline(false);
+      return;
+    }
+
+    setIsSearchingOnline(true);
+    const controller = new AbortController();
+    const timer = setTimeout(async () => {
+      try {
+        const fetched = await searchOnlinePlaces(trimmed, controller.signal);
+        setOnlineResults(fetched);
+      } finally {
+        setIsSearchingOnline(false);
+      }
+    }, 220);
+
+    return () => {
+      clearTimeout(timer);
+      controller.abort();
+    };
+  }, [q]);
+
+  // Merge and deduplicate local + online results
+  const combinedResults = useMemo<UnifiedPlaceResult[]>(() => {
+    const list: UnifiedPlaceResult[] = [...localResults];
+    const seen = new Set(localResults.map((r) => r.name.toLowerCase()));
+
+    for (const online of onlineResults) {
+      const nameLower = online.name.toLowerCase();
+      if (!seen.has(nameLower)) {
+        seen.add(nameLower);
+        list.push(online);
+      }
+    }
+    return list.slice(0, 8);
+  }, [localResults, onlineResults]);
+
+  const activePlaceholder = isPickingMap
+    ? "Type a place or click anywhere on the map…"
+    : placeholder;
+
+  const handleSelect = (item: UnifiedPlaceResult) => {
+    onChange({ lat: item.lat, lon: item.lon, name: item.name });
+    setQ("");
+    setOpen(false);
+  };
+
+  const handleClear = () => {
+    setQ("");
+    onChange(null);
+    inputRef.current?.focus();
+  };
 
   return (
     <div className="relative">
-      <label className="mb-1 block text-xs font-medium uppercase tracking-wide text-muted-foreground">
-        {label}
-      </label>
       <div className="relative">
+        {/* Coloured dot on the left */}
         <span
           className="absolute left-3 top-1/2 size-2.5 -translate-y-1/2 rounded-full"
           style={{ background: dot }}
         />
+
         <Input
-          className="pl-8"
-          placeholder={placeholder}
+          ref={inputRef}
+          className={`pl-8 pr-14 transition-all rounded-xl border-border bg-white text-xs font-medium dark:bg-card ${
+            isPickingMap
+              ? "ring-2 ring-primary/40 ring-offset-0 focus-visible:ring-primary/60"
+              : "hover:border-primary/40"
+          }`}
+          placeholder={activePlaceholder}
           value={value ? value.name : q}
           onChange={(e) => {
             setQ(e.target.value);
             setOpen(true);
             if (value) onChange(null);
           }}
-          onFocus={() => setOpen(true)}
-          onBlur={() => window.setTimeout(() => setOpen(false), 150)}
+          onFocus={() => {
+            setOpen(true);
+            onFocus?.();
+          }}
+          onBlur={() => window.setTimeout(() => setOpen(false), 200)}
         />
+
+        {/* Right action icons (Clear button & Online search spinner) */}
+        <div className="absolute right-2.5 top-1/2 flex -translate-y-1/2 items-center gap-1.5">
+          {isSearchingOnline && (
+            <Loader2 className="size-3.5 animate-spin text-primary opacity-80" />
+          )}
+
+          {(value || q) && (
+            <button
+              type="button"
+              onClick={handleClear}
+              className="rounded-full p-1 text-muted-foreground hover:bg-secondary hover:text-foreground"
+              title="Clear input"
+            >
+              <X className="size-3.5" />
+            </button>
+          )}
+
+          {isPickingMap && (
+            <span className="pointer-events-none">
+              <MapPin className="size-3.5 animate-pulse text-primary" />
+            </span>
+          )}
+        </div>
       </div>
-      {open && !value && results.length > 0 && (
-        <ul className="absolute z-[1000] mt-1 max-h-64 w-full overflow-auto rounded-lg border border-border bg-popover shadow-lg">
-          {results.map((r) => (
-            <li key={r.id}>
-              <button
-                type="button"
-                className="flex w-full items-center justify-between gap-2 px-3 py-2 text-left text-sm hover:bg-secondary"
-                onMouseDown={(e) => e.preventDefault()}
-                onClick={() => {
-                  onChange({ lat: r.lat, lon: r.lon, name: r.name });
-                  setQ("");
-                  setOpen(false);
-                }}
-              >
-                <span className="truncate">{r.name}</span>
-                <span className="shrink-0 text-[10px] uppercase tracking-wide text-muted-foreground">
-                  {r.modes.join(" + ")}
-                </span>
-              </button>
-            </li>
-          ))}
-        </ul>
+
+      {/* ── Google Maps Style Autocomplete Dropdown ── */}
+      {open && !value && (
+        <div className="absolute left-0 right-0 z-[1005] mt-1.5 max-h-72 overflow-y-auto rounded-2xl border border-border/80 bg-white/98 p-1.5 shadow-2xl backdrop-blur-md dark:bg-popover/98 animate-in fade-in zoom-in-95">
+          {/* 1. "Your location" Recommendation at FIRST of dropdown list */}
+          {onLocate && (
+            <button
+              type="button"
+              onMouseDown={(e) => e.preventDefault()}
+              onClick={() => {
+                onLocate();
+                setOpen(false);
+              }}
+              className="flex w-full items-center gap-2.5 rounded-xl p-2 text-left transition hover:bg-primary/10 group active:scale-[0.99] border-b border-border/50 mb-1"
+            >
+              <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary group-hover:bg-primary group-hover:text-white transition shadow-xs">
+                {locating ? (
+                  <Loader2 className="size-3.5 animate-spin" />
+                ) : (
+                  <LocateFixed className="size-3.5" />
+                )}
+              </div>
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold text-primary group-hover:text-primary">
+                    Your location
+                  </span>
+                  <span className="text-[9px] font-semibold text-primary/80 bg-primary/10 px-1.5 py-0.5 rounded">
+                    GPS
+                  </span>
+                </div>
+                <p className="text-[10px] text-muted-foreground">
+                  {locating ? "Acquiring GPS coordinates…" : "Use current device location"}
+                </p>
+              </div>
+            </button>
+          )}
+
+          {/* Header */}
+          <div className="flex items-center justify-between px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-muted-foreground border-b border-border/30 pb-1">
+            <span className="flex items-center gap-1">
+              <Sparkles className="size-3 text-primary" />
+              Suggested Places in Nagpur
+            </span>
+            {isSearchingOnline && (
+              <span className="flex items-center gap-1 text-[9px] lowercase font-normal">
+                <Loader2 className="size-2.5 animate-spin text-primary" /> searching…
+              </span>
+            )}
+          </div>
+
+          {combinedResults.length === 0 && !isSearchingOnline && (
+            <div className="px-4 py-4 text-center text-xs text-muted-foreground">
+              <MapPin className="mx-auto size-4 text-muted-foreground/50 mb-1" />
+              <p className="font-semibold text-foreground">No matching places found</p>
+              <p className="text-[10px] mt-0.5">Try searching a landmark, college, resort or tap the map</p>
+            </div>
+          )}
+
+          <ul className="space-y-0.5 pt-1">
+            {combinedResults.map((r) => (
+              <li key={r.id}>
+                <button
+                  type="button"
+                  className="flex w-full items-start gap-2.5 rounded-xl px-2.5 py-2 text-left transition hover:bg-secondary/70 active:scale-[0.99]"
+                  onMouseDown={(e) => e.preventDefault()}
+                  onClick={() => handleSelect(r)}
+                >
+                  <PlaceIcon place={r} />
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center justify-between gap-1">
+                      <span className="truncate text-xs font-bold text-foreground">
+                        {r.name}
+                      </span>
+                      {r.categoryLabel && (
+                        <span className="shrink-0 rounded-md bg-secondary px-1.5 py-0.5 text-[9px] font-semibold text-muted-foreground">
+                          {r.categoryLabel}
+                        </span>
+                      )}
+                    </div>
+                    <p className="truncate text-[11px] text-muted-foreground mt-0.5">
+                      {r.subtitle}
+                    </p>
+                  </div>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
     </div>
   );

@@ -1,0 +1,2791 @@
+{
+  "metro": {
+    "Blue Line": [
+      {
+        "lat": 21.11039,
+        "lon": 79.001267
+      },
+      {
+        "lat": 21.110326,
+        "lon": 79.001175
+      },
+      {
+        "lat": 21.109514,
+        "lon": 78.999794
+      },
+      {
+        "lat": 21.109459,
+        "lon": 78.999682
+      },
+      {
+        "lat": 21.109203,
+        "lon": 78.999203
+      },
+      {
+        "lat": 21.109293,
+        "lon": 78.999136
+      },
+      {
+        "lat": 21.110259,
+        "lon": 79.000786
+      },
+      {
+        "lat": 21.110596,
+        "lon": 79.001327
+      },
+      {
+        "lat": 21.111011,
+        "lon": 79.001992
+      },
+      {
+        "lat": 21.111169,
+        "lon": 79.002271
+      },
+      {
+        "lat": 21.111323,
+        "lon": 79.002623
+      },
+      {
+        "lat": 21.112182,
+        "lon": 79.004582
+      },
+      {
+        "lat": 21.112589,
+        "lon": 79.005543
+      },
+      {
+        "lat": 21.113539,
+        "lon": 79.007699
+      },
+      {
+        "lat": 21.114171,
+        "lon": 79.009135
+      },
+      {
+        "lat": 21.114626,
+        "lon": 79.010167
+      },
+      {
+        "lat": 21.114719,
+        "lon": 79.010397
+      },
+      {
+        "lat": 21.114924,
+        "lon": 79.010778
+      },
+      {
+        "lat": 21.115246,
+        "lon": 79.011231
+      },
+      {
+        "lat": 21.115923,
+        "lon": 79.012137
+      },
+      {
+        "lat": 21.11617,
+        "lon": 79.01247
+      },
+      {
+        "lat": 21.117282,
+        "lon": 79.013971
+      },
+      {
+        "lat": 21.117631,
+        "lon": 79.014485
+      },
+      {
+        "lat": 21.117704,
+        "lon": 79.014651
+      },
+      {
+        "lat": 21.117774,
+        "lon": 79.014959
+      },
+      {
+        "lat": 21.117783,
+        "lon": 79.015066
+      },
+      {
+        "lat": 21.117781,
+        "lon": 79.015185
+      },
+      {
+        "lat": 21.117757,
+        "lon": 79.015578
+      },
+      {
+        "lat": 21.117722,
+        "lon": 79.016112
+      },
+      {
+        "lat": 21.1177,
+        "lon": 79.016869
+      },
+      {
+        "lat": 21.117775,
+        "lon": 79.01726
+      },
+      {
+        "lat": 21.11788,
+        "lon": 79.017535
+      },
+      {
+        "lat": 21.118149,
+        "lon": 79.018115
+      },
+      {
+        "lat": 21.118526,
+        "lon": 79.018897
+      },
+      {
+        "lat": 21.118592,
+        "lon": 79.019092
+      },
+      {
+        "lat": 21.1189,
+        "lon": 79.019751
+      },
+      {
+        "lat": 21.119045,
+        "lon": 79.020061
+      },
+      {
+        "lat": 21.119092,
+        "lon": 79.020176
+      },
+      {
+        "lat": 21.119242,
+        "lon": 79.020514
+      },
+      {
+        "lat": 21.119853,
+        "lon": 79.021829
+      },
+      {
+        "lat": 21.120135,
+        "lon": 79.022387
+      },
+      {
+        "lat": 21.120309,
+        "lon": 79.022986
+      },
+      {
+        "lat": 21.120449,
+        "lon": 79.023607
+      },
+      {
+        "lat": 21.120568,
+        "lon": 79.024179
+      },
+      {
+        "lat": 21.120698,
+        "lon": 79.024952
+      },
+      {
+        "lat": 21.120756,
+        "lon": 79.0253
+      },
+      {
+        "lat": 21.120839,
+        "lon": 79.025792
+      },
+      {
+        "lat": 21.120955,
+        "lon": 79.02638
+      },
+      {
+        "lat": 21.120996,
+        "lon": 79.026571
+      },
+      {
+        "lat": 21.121133,
+        "lon": 79.027346
+      },
+      {
+        "lat": 21.1212,
+        "lon": 79.027719
+      },
+      {
+        "lat": 21.121346,
+        "lon": 79.028549
+      },
+      {
+        "lat": 21.121377,
+        "lon": 79.028761
+      },
+      {
+        "lat": 21.121476,
+        "lon": 79.029257
+      },
+      {
+        "lat": 21.121708,
+        "lon": 79.030427
+      },
+      {
+        "lat": 21.121727,
+        "lon": 79.030527
+      },
+      {
+        "lat": 21.121859,
+        "lon": 79.031196
+      },
+      {
+        "lat": 21.122021,
+        "lon": 79.032165
+      },
+      {
+        "lat": 21.122575,
+        "lon": 79.035235
+      },
+      {
+        "lat": 21.122703,
+        "lon": 79.036022
+      },
+      {
+        "lat": 21.122822,
+        "lon": 79.036756
+      },
+      {
+        "lat": 21.123366,
+        "lon": 79.039805
+      },
+      {
+        "lat": 21.123331,
+        "lon": 79.041464
+      },
+      {
+        "lat": 21.123314,
+        "lon": 79.041913
+      },
+      {
+        "lat": 21.123296,
+        "lon": 79.042381
+      },
+      {
+        "lat": 21.123248,
+        "lon": 79.042945
+      },
+      {
+        "lat": 21.123274,
+        "lon": 79.043284
+      },
+      {
+        "lat": 21.123391,
+        "lon": 79.043571
+      },
+      {
+        "lat": 21.123444,
+        "lon": 79.043641
+      },
+      {
+        "lat": 21.123606,
+        "lon": 79.043851
+      },
+      {
+        "lat": 21.124257,
+        "lon": 79.04442
+      },
+      {
+        "lat": 21.124902,
+        "lon": 79.044379
+      },
+      {
+        "lat": 21.125413,
+        "lon": 79.044239
+      },
+      {
+        "lat": 21.125756,
+        "lon": 79.044251
+      },
+      {
+        "lat": 21.12594,
+        "lon": 79.044336
+      },
+      {
+        "lat": 21.126547,
+        "lon": 79.044732
+      },
+      {
+        "lat": 21.126975,
+        "lon": 79.045075
+      },
+      {
+        "lat": 21.127278,
+        "lon": 79.045293
+      },
+      {
+        "lat": 21.127402,
+        "lon": 79.04537
+      },
+      {
+        "lat": 21.128298,
+        "lon": 79.045821
+      },
+      {
+        "lat": 21.128452,
+        "lon": 79.04588
+      },
+      {
+        "lat": 21.12887,
+        "lon": 79.046002
+      },
+      {
+        "lat": 21.128922,
+        "lon": 79.046012
+      },
+      {
+        "name": "LAD Square",
+        "lat": 21.13317090774762,
+        "lon": 79.05517101294728
+      },
+      {
+        "name": "Shankar Nagar Square",
+        "lat": 21.136343523538372,
+        "lon": 79.0621226449247
+      },
+      {
+        "name": "Institution of Engineers",
+        "lat": 21.138830255441555,
+        "lon": 79.0699815173614
+      },
+      {
+        "name": "Jhansi Rani Square",
+        "lat": 21.141075335437616,
+        "lon": 79.07809687399927
+      },
+      {
+        "name": "Sitabuldi (Interchange)",
+        "lat": 21.141449827391746,
+        "lon": 79.0824671783966
+      },
+      {
+        "name": "Cotton Market",
+        "lat": 21.14594713613989,
+        "lon": 79.09016579398791
+      },
+      {
+        "name": "Nagpur Railway Station",
+        "lat": 21.151332123945956,
+        "lon": 79.09058703061376
+      },
+      {
+        "name": "Dosar Vaishya Square",
+        "lat": 21.152955329063165,
+        "lon": 79.09520587754653
+      },
+      {
+        "name": "Agrasen Square",
+        "lat": 21.151126713609,
+        "lon": 79.10291582798412
+      },
+      {
+        "name": "Chitar Oli Chowk",
+        "lat": 21.150024150372133,
+        "lon": 79.11021322587389
+      },
+      {
+        "name": "Telephone Exchange",
+        "lat": 21.148965296196867,
+        "lon": 79.11876447745091
+      },
+      {
+        "name": "Ambedkar Square",
+        "lat": 21.148504613245425,
+        "lon": 79.12947836934846
+      },
+      {
+        "name": "Vaishnodevi Square",
+        "lat": 21.147942103551443,
+        "lon": 79.13680712906633
+      },
+      {
+        "name": "Prajapati Nagar",
+        "lat": 21.15033021313108,
+        "lon": 79.1489979890925
+      }
+    ],
+    "Orange Line": [
+      {
+        "name": "Automotive Square",
+        "lat": 21.185965742915545,
+        "lon": 79.12063960023673
+      },
+      {
+        "name": "Nari Road",
+        "lat": 21.179803776683247,
+        "lon": 79.11002902925759
+      },
+      {
+        "name": "Indora Square",
+        "lat": 21.174619882734813,
+        "lon": 79.10166606446865
+      },
+      {
+        "name": "Kadvi Chowk",
+        "lat": 21.169100813912376,
+        "lon": 79.09227937796443
+      },
+      {
+        "name": "Gaddi Godam Square",
+        "lat": 21.16194614663947,
+        "lon": 79.08385004305558
+      },
+      {
+        "name": "Kasturchand Park",
+        "lat": 21.15484877490362,
+        "lon": 79.08131513486109
+      },
+      {
+        "name": "Zero Mile Freedom Park",
+        "lat": 21.14712814904374,
+        "lon": 79.08050044359297
+      },
+      {
+        "name": "Sitabuldi (Interchange)",
+        "lat": 21.141449827391746,
+        "lon": 79.0824671783966
+      },
+      {
+        "name": "Congress Nagar",
+        "lat": 21.128191087488094,
+        "lon": 79.082743771942
+      },
+      {
+        "name": "Rahate Colony",
+        "lat": 21.127865748808677,
+        "lon": 79.07580587005276
+      },
+      {
+        "name": "Ajni Square",
+        "lat": 21.118549602434648,
+        "lon": 79.07262843326387
+      },
+      {
+        "name": "Chhatrapati Square",
+        "lat": 21.10948115962586,
+        "lon": 79.06929924962502
+      },
+      {
+        "name": "Jaiprakash Nagar",
+        "lat": 21.103573176185694,
+        "lon": 79.06805857612922
+      },
+      {
+        "name": "Ujjwal Nagar",
+        "lat": 21.09655348303208,
+        "lon": 79.06613469121461
+      },
+      {
+        "name": "Airport",
+        "lat": 21.08635576795133,
+        "lon": 79.06377088535726
+      },
+      {
+        "name": "Airport South",
+        "lat": 21.07905578020556,
+        "lon": 79.061342415567
+      },
+      {
+        "name": "New Airport",
+        "lat": 21.06648782372999,
+        "lon": 79.05552794726772
+      },
+      {
+        "name": "Khapri",
+        "lat": 21.04938121281969,
+        "lon": 79.04858986209098
+      }
+    ]
+  },
+  "bus": {
+    "Jaitala - Pardi": [
+      {
+        "name": "Pardi",
+        "lat": 21.149724,
+        "lon": 79.157855
+      },
+      {
+        "name": "Pardi Bazar Chowk",
+        "lat": 21.150173,
+        "lon": 79.155271
+      },
+      {
+        "name": "Subhan Nagar",
+        "lat": 21.150803,
+        "lon": 79.152815
+      },
+      {
+        "name": "Old Pardi Naka Chowk",
+        "lat": 21.151152,
+        "lon": 79.150123
+      },
+      {
+        "name": "Railway Crossing Pardi",
+        "lat": 21.151175,
+        "lon": 79.144264
+      },
+      {
+        "name": "Haldiram Factory",
+        "lat": 21.151144,
+        "lon": 79.137744
+      },
+      {
+        "name": "Wardhman Nagar",
+        "lat": 21.151633,
+        "lon": 79.134902
+      },
+      {
+        "name": "Hirvi Nagar",
+        "lat": 21.146959,
+        "lon": 79.134035
+      },
+      {
+        "name": "Shastri Nagar Chowk",
+        "lat": 21.142651,
+        "lon": 79.119852
+      },
+      {
+        "name": "Old Bagadganj",
+        "lat": 21.142982,
+        "lon": 79.11542
+      },
+      {
+        "name": "Gangabai Ghat",
+        "lat": 21.143313,
+        "lon": 79.112082
+      },
+      {
+        "name": "Shivaji Nagar Gate",
+        "lat": 21.144965,
+        "lon": 79.106377
+      },
+      {
+        "name": "Ayachit Mandir",
+        "lat": 21.145166,
+        "lon": 79.103468
+      },
+      {
+        "name": "Narsing Talkies",
+        "lat": 21.145222,
+        "lon": 79.102861
+      },
+      {
+        "name": "Chitnis Park Mahal",
+        "lat": 21.145377,
+        "lon": 79.101482
+      },
+      {
+        "name": "Tilak Putla",
+        "lat": 21.144142,
+        "lon": 79.101229
+      },
+      {
+        "name": "Tukdoji Putala Ganesh Peth Colony",
+        "lat": 21.141308,
+        "lon": 79.100613
+      },
+      {
+        "name": "Model Mill",
+        "lat": 21.140463,
+        "lon": 79.09756
+      },
+      {
+        "name": "MSRTC S.T.Stand",
+        "lat": 21.140489,
+        "lon": 79.096084
+      },
+      {
+        "name": "Agyaramdevi Chowk",
+        "lat": 21.144483,
+        "lon": 79.095361
+      },
+      {
+        "name": "Cottan Market",
+        "lat": 21.14502,
+        "lon": 79.089453
+      },
+      {
+        "name": "Loha Pool / Manas Chowk",
+        "lat": 21.145826,
+        "lon": 79.087977
+      },
+      {
+        "name": "Morris College T Point",
+        "lat": 21.147196,
+        "lon": 79.081153
+      },
+      {
+        "name": "Moonlight",
+        "lat": 21.144249,
+        "lon": 79.080901
+      },
+      {
+        "name": "Sitabuldi",
+        "lat": 21.141923,
+        "lon": 79.080433
+      },
+      {
+        "name": "Jhansi Rani Chowk",
+        "lat": 21.140898,
+        "lon": 79.078251
+      },
+      {
+        "name": "University Library",
+        "lat": 21.139183,
+        "lon": 79.072882
+      },
+      {
+        "name": "Alankar Chowk",
+        "lat": 21.137797,
+        "lon": 79.068734
+      },
+      {
+        "name": "Dharampeth",
+        "lat": 21.136631,
+        "lon": 79.063954
+      },
+      {
+        "name": "Shankar Nagar",
+        "lat": 21.135756,
+        "lon": 79.060193
+      },
+      {
+        "name": "Shankar Nagar-2",
+        "lat": 21.134801,
+        "lon": 79.058267
+      },
+      {
+        "name": "L.A.D.College",
+        "lat": 21.133275,
+        "lon": 79.0556
+      },
+      {
+        "name": "Abhyankar Nagar",
+        "lat": 21.128727,
+        "lon": 79.057438
+      },
+      {
+        "name": "Shraddhanand Peth Chowk",
+        "lat": 21.124744,
+        "lon": 79.058865
+      },
+      {
+        "name": "Mate Chowk",
+        "lat": 21.121519,
+        "lon": 79.056467
+      },
+      {
+        "name": "Pratap Nagar (Durga Mandir)",
+        "lat": 21.11607,
+        "lon": 79.05675
+      },
+      {
+        "name": "Pratap Nagar",
+        "lat": 21.113693,
+        "lon": 79.056616
+      },
+      {
+        "name": "Padole Hospital Chowk",
+        "lat": 21.112798,
+        "lon": 79.051065
+      },
+      {
+        "name": "Sambhaji Maharaj Chowk",
+        "lat": 21.113334,
+        "lon": 79.045298
+      },
+      {
+        "name": "N.I.T.Garden",
+        "lat": 21.11423,
+        "lon": 79.042824
+      },
+      {
+        "name": "Trimurti Nagar Chowk",
+        "lat": 21.114956,
+        "lon": 79.040616
+      },
+      {
+        "name": "Dharampet Mahila Bank",
+        "lat": 21.116341,
+        "lon": 79.037304
+      },
+      {
+        "name": "Mangalmurti Chowk",
+        "lat": 21.117565,
+        "lon": 79.03391
+      },
+      {
+        "name": "Jaitala Bazar Chowk",
+        "lat": 21.115256,
+        "lon": 79.030413
+      },
+      {
+        "name": "Prasad Nagar",
+        "lat": 21.114037,
+        "lon": 79.029144
+      },
+      {
+        "name": "Ashtavinayak Nagar",
+        "lat": 21.112818,
+        "lon": 79.028048
+      },
+      {
+        "name": "Jaitala Road Godavari",
+        "lat": 21.111919,
+        "lon": 79.02635
+      },
+      {
+        "name": "Godavari Chowk",
+        "lat": 21.108738,
+        "lon": 79.022292
+      },
+      {
+        "name": "Jaitala",
+        "lat": 21.10828,
+        "lon": 79.017848
+      }
+    ],
+    "Jaripataka - Sonegaon": [
+      {
+        "name": "Sonegaon",
+        "lat": 21.098929,
+        "lon": 79.045971
+      },
+      {
+        "name": "Sonegaon H.B. Estate",
+        "lat": 21.097949,
+        "lon": 79.051794
+      },
+      {
+        "name": "Sahakar Nagar",
+        "lat": 21.101393,
+        "lon": 79.054526
+      },
+      {
+        "name": "Khamal Bazar Square",
+        "lat": 21.104717,
+        "lon": 79.058074
+      },
+      {
+        "name": "Khamala Wasti",
+        "lat": 21.10704,
+        "lon": 79.059741
+      },
+      {
+        "name": "Arunrao Kalode School",
+        "lat": 21.108602,
+        "lon": 79.061658
+      },
+      {
+        "name": "Khamla Chowk",
+        "lat": 21.109343,
+        "lon": 79.062373
+      },
+      {
+        "name": "Sawarkar Nagar Square / Parate Lawn",
+        "lat": 21.112055,
+        "lon": 79.06474
+      },
+      {
+        "name": "Deo Nagar",
+        "lat": 21.115601,
+        "lon": 79.068662
+      },
+      {
+        "name": "L.I.C. Colony",
+        "lat": 21.118456,
+        "lon": 79.071525
+      },
+      {
+        "name": "Ajni Chowk",
+        "lat": 21.120655,
+        "lon": 79.073067
+      },
+      {
+        "name": "Central Jail Quarters",
+        "lat": 21.126519,
+        "lon": 79.075421
+      },
+      {
+        "name": "Rahate Colony",
+        "lat": 21.130855,
+        "lon": 79.076914
+      },
+      {
+        "name": "Lokmat Chowk",
+        "lat": 21.135078,
+        "lon": 79.078327
+      },
+      {
+        "name": "Panchasheel Chowk",
+        "lat": 21.139061,
+        "lon": 79.079729
+      },
+      {
+        "name": "Sitabuldi",
+        "lat": 21.141923,
+        "lon": 79.080433
+      },
+      {
+        "name": "Moonlight",
+        "lat": 21.144249,
+        "lon": 79.080901
+      },
+      {
+        "name": "Morris College T Point",
+        "lat": 21.147196,
+        "lon": 79.081153
+      },
+      {
+        "name": "Loha Pool / Manas Chowk",
+        "lat": 21.145826,
+        "lon": 79.087977
+      },
+      {
+        "name": "Nagpur Railway Station",
+        "lat": 21.148836,
+        "lon": 79.087581
+      },
+      {
+        "name": "S.B.I. - Railway Station",
+        "lat": 21.153474,
+        "lon": 79.087231
+      },
+      {
+        "name": "Jai Stambh Chowk",
+        "lat": 21.153997,
+        "lon": 79.0857
+      },
+      {
+        "name": "L.I.C. Chowk",
+        "lat": 21.154343,
+        "lon": 79.084573
+      },
+      {
+        "name": "Gaddigodam Chowk",
+        "lat": 21.155664,
+        "lon": 79.081786
+      },
+      {
+        "name": "Gaddigodam",
+        "lat": 21.159622,
+        "lon": 79.082701
+      },
+      {
+        "name": "Gurudwara Kamptee Road",
+        "lat": 21.164348,
+        "lon": 79.08662
+      },
+      {
+        "name": "Sai Mandir Clark Town",
+        "lat": 21.165453,
+        "lon": 79.088548
+      },
+      {
+        "name": "Kadbi Chowk",
+        "lat": 21.167758,
+        "lon": 79.091162
+      },
+      {
+        "name": "Bezonbaug",
+        "lat": 21.169562,
+        "lon": 79.093562
+      },
+      {
+        "name": "10 No.Puliya",
+        "lat": 21.170467,
+        "lon": 79.096133
+      },
+      {
+        "name": "Indora Chowk",
+        "lat": 21.172962,
+        "lon": 79.09938
+      },
+      {
+        "name": "Indira Maidan",
+        "lat": 21.175375,
+        "lon": 79.096392
+      },
+      {
+        "name": "Barakholi Square",
+        "lat": 21.178458,
+        "lon": 79.094845
+      },
+      {
+        "name": "Hanuman Mandir Jaripataka",
+        "lat": 21.17756,
+        "lon": 79.092172
+      },
+      {
+        "name": "Jaripataka",
+        "lat": 21.176611,
+        "lon": 79.089241
+      }
+    ],
+    "Khapri Metro Station - Tech Mahindra Mihan Sez": [
+      {
+        "name": "Tech Mahindra MIHAN Sez",
+        "lat": 21.068421,
+        "lon": 79.011193
+      },
+      {
+        "name": "Tata Consultancy Gate No 3",
+        "lat": 21.059026,
+        "lon": 79.019372
+      },
+      {
+        "name": "M.I.H.A.N. Police Station",
+        "lat": 21.055774,
+        "lon": 79.018499
+      },
+      {
+        "name": "Tata Consultancy Gate No 2",
+        "lat": 21.054349,
+        "lon": 79.018718
+      },
+      {
+        "name": "T.C.S. Tata Company",
+        "lat": 21.053584,
+        "lon": 79.021082
+      },
+      {
+        "name": "G.I.F.",
+        "lat": 21.05364,
+        "lon": 79.026793
+      },
+      {
+        "name": "M.I.H.A.N. Telecom Centre",
+        "lat": 21.058726,
+        "lon": 79.028467
+      },
+      {
+        "name": "L&T Park M.I.H.A.N.",
+        "lat": 21.05209,
+        "lon": 79.026414
+      },
+      {
+        "name": "S.P. Infocity M.I.H.A.N.",
+        "lat": 21.051025,
+        "lon": 79.030394
+      },
+      {
+        "name": "W-Building",
+        "lat": 21.049119,
+        "lon": 79.036191
+      },
+      {
+        "name": "Hexaware",
+        "lat": 21.046071,
+        "lon": 79.035616
+      },
+      {
+        "name": "Butibori MIDC Phata",
+        "lat": 21.048785,
+        "lon": 79.036547
+      },
+      {
+        "name": "Sewage Pump",
+        "lat": 21.053408,
+        "lon": 79.037924
+      },
+      {
+        "name": "Warehouse Khapri",
+        "lat": 21.052497,
+        "lon": 79.04436
+      },
+      {
+        "name": "Khapri Metro Station",
+        "lat": 21.048814,
+        "lon": 79.047802
+      }
+    ],
+    "Khapri Metro Stattion - Mihan": [
+      {
+        "name": "Khapri Metro Station",
+        "lat": 21.048814,
+        "lon": 79.047802
+      },
+      {
+        "name": "R.K Madhani Building",
+        "lat": 21.049358,
+        "lon": 79.043915
+      },
+      {
+        "name": "Sewage Pump",
+        "lat": 21.053408,
+        "lon": 79.037924
+      },
+      {
+        "name": "Butibori MIDC Phata",
+        "lat": 21.048785,
+        "lon": 79.036547
+      },
+      {
+        "name": "Mahindra Bloomdale Society",
+        "lat": 21.04202,
+        "lon": 79.034441
+      },
+      {
+        "name": "Delhi Public School MIHAN",
+        "lat": 21.039641,
+        "lon": 79.032828
+      },
+      {
+        "name": "AIIMS Hospital MIHAN",
+        "lat": 21.036941,
+        "lon": 79.029884
+      }
+    ],
+    "Lokmanya nagr - Wadi -Tpoint": [
+      {
+        "name": "Wadi T-Point",
+        "lat": 21.152341,
+        "lon": 79.0025
+      },
+      {
+        "name": "Toyota Patni Automobiles",
+        "lat": 21.148246,
+        "lon": 79.003317
+      },
+      {
+        "name": "B.M.W. Motors",
+        "lat": 21.144462,
+        "lon": 79.003536
+      },
+      {
+        "name": "Mahindra Automobiles",
+        "lat": 21.142072,
+        "lon": 79.003608
+      },
+      {
+        "name": "G.M.M.C.O. Limited Nagpur",
+        "lat": 21.140344,
+        "lon": 79.003701
+      },
+      {
+        "name": "Nangia Hospital",
+        "lat": 21.136588,
+        "lon": 79.003922
+      },
+      {
+        "name": "Suzuki Service Centre",
+        "lat": 21.134339,
+        "lon": 79.004144
+      },
+      {
+        "name": "Plasto Company Hingana M.I.D.C.",
+        "lat": 21.130368,
+        "lon": 79.00458
+      },
+      {
+        "name": "Raisoni College Corner",
+        "lat": 21.127798,
+        "lon": 79.005532
+      },
+      {
+        "name": "Coca Cola Factory",
+        "lat": 21.123667,
+        "lon": 79.011633
+      },
+      {
+        "name": "Wadi Phata",
+        "lat": 21.119456,
+        "lon": 79.014387
+      },
+      {
+        "name": "Hingna Naka",
+        "lat": 21.117675,
+        "lon": 79.01672
+      },
+      {
+        "name": "Balajinagar",
+        "lat": 21.115799,
+        "lon": 79.012068
+      },
+      {
+        "name": "Mahindra Colony",
+        "lat": 21.113226,
+        "lon": 79.00702
+      },
+      {
+        "name": "Lokmanya Nagar Metro Station",
+        "lat": 21.110407497751023,
+        "lon": 79.00125323240383
+      }
+    ],
+    "Maharaja Baug Terminal - Nirmal Nagar": [
+      {
+        "name": "Nirmal Nagar",
+        "lat": 21.204411,
+        "lon": 79.048402
+      },
+      {
+        "name": "Madhav Nagar Ashram",
+        "lat": 21.200248,
+        "lon": 79.050791
+      },
+      {
+        "name": "Gorewada Naka",
+        "lat": 21.197627,
+        "lon": 79.050998
+      },
+      {
+        "name": "Gorewada",
+        "lat": 21.195165,
+        "lon": 79.048494
+      },
+      {
+        "name": "Khalpande Chowk",
+        "lat": 21.190743,
+        "lon": 79.047715
+      },
+      {
+        "name": "Gorewada Chowk",
+        "lat": 21.18614,
+        "lon": 79.050211
+      },
+      {
+        "name": "Prashant Colony",
+        "lat": 21.183839,
+        "lon": 79.051555
+      },
+      {
+        "name": "Borgaon",
+        "lat": 21.180857,
+        "lon": 79.053329
+      },
+      {
+        "name": "Dinshaw Factory",
+        "lat": 21.179095,
+        "lon": 79.054287
+      },
+      {
+        "name": "Gittikhandan Chowk",
+        "lat": 21.174413,
+        "lon": 79.056898
+      },
+      {
+        "name": "Shri Ramdeobaba College Of Engineering",
+        "lat": 21.173312,
+        "lon": 79.060539
+      },
+      {
+        "name": "Katol Naka",
+        "lat": 21.170719,
+        "lon": 79.070173
+      },
+      {
+        "name": "Japanese Garden Chowk",
+        "lat": 21.161434,
+        "lon": 79.066883
+      },
+      {
+        "name": "Sadar Police Station / Income Tax Office",
+        "lat": 21.161413,
+        "lon": 79.071361
+      },
+      {
+        "name": "S.P.Office",
+        "lat": 21.158591,
+        "lon": 79.074572
+      },
+      {
+        "name": "V.C.A.Ground",
+        "lat": 21.15803,
+        "lon": 79.076646
+      },
+      {
+        "name": "Liberty Chowk / Nagpur Improvement Trust",
+        "lat": 21.157189,
+        "lon": 79.079707
+      },
+      {
+        "name": "R.B.I.Chowk",
+        "lat": 21.152381,
+        "lon": 79.080894
+      },
+      {
+        "name": "Vidhan Bhavan Chowk",
+        "lat": 21.152701,
+        "lon": 79.078588
+      },
+      {
+        "name": "Akashwani Chowk",
+        "lat": 21.152481,
+        "lon": 79.074676
+      },
+      {
+        "name": "D.A.G.P.T.Office",
+        "lat": 21.147917,
+        "lon": 79.074497
+      },
+      {
+        "name": "Institute Of Science Nagpur",
+        "lat": 21.145355,
+        "lon": 79.074404
+      },
+      {
+        "name": "Sitabuldi Bus Terminal",
+        "lat": 21.144028,
+        "lon": 79.078251
+      }
+    ],
+    "Maharaja Baug Terminal - Sawarmendha": [
+      {
+        "name": "Sawarmendha",
+        "lat": 21.278425,
+        "lon": 79.007567
+      },
+      {
+        "name": "Bramhanwada",
+        "lat": 21.254668,
+        "lon": 79.009526
+      },
+      {
+        "name": "Mahurzari Phata",
+        "lat": 21.243107,
+        "lon": 79.008825
+      },
+      {
+        "name": "Bharat Wada",
+        "lat": 21.231386,
+        "lon": 79.028208
+      },
+      {
+        "name": "Pithesur 3",
+        "lat": 21.219716,
+        "lon": 79.041078
+      },
+      {
+        "name": "Pithesur 1",
+        "lat": 21.21125,
+        "lon": 79.046172
+      },
+      {
+        "name": "Nirmal Nagar",
+        "lat": 21.204411,
+        "lon": 79.048402
+      },
+      {
+        "name": "Madhav Nagar Ashram",
+        "lat": 21.200248,
+        "lon": 79.050791
+      },
+      {
+        "name": "Gorewada Naka",
+        "lat": 21.197627,
+        "lon": 79.050998
+      },
+      {
+        "name": "Gorewada",
+        "lat": 21.195165,
+        "lon": 79.048494
+      },
+      {
+        "name": "Khalpande Chowk",
+        "lat": 21.190743,
+        "lon": 79.047715
+      },
+      {
+        "name": "Gorewada Chowk",
+        "lat": 21.18614,
+        "lon": 79.050211
+      },
+      {
+        "name": "Prashant Colony",
+        "lat": 21.183839,
+        "lon": 79.051555
+      },
+      {
+        "name": "Borgaon",
+        "lat": 21.180857,
+        "lon": 79.053329
+      },
+      {
+        "name": "Dinshaw Factory",
+        "lat": 21.179095,
+        "lon": 79.054287
+      },
+      {
+        "name": "Gittikhandan Chowk",
+        "lat": 21.174413,
+        "lon": 79.056898
+      },
+      {
+        "name": "Shri Ramdeobaba College Of Engineering",
+        "lat": 21.173312,
+        "lon": 79.060539
+      },
+      {
+        "name": "Katol Naka",
+        "lat": 21.170719,
+        "lon": 79.070173
+      },
+      {
+        "name": "Japanese Garden Chowk",
+        "lat": 21.161434,
+        "lon": 79.066883
+      },
+      {
+        "name": "Sadar Police Station / Income Tax Office",
+        "lat": 21.161413,
+        "lon": 79.071361
+      },
+      {
+        "name": "S.P.Office",
+        "lat": 21.158591,
+        "lon": 79.074572
+      },
+      {
+        "name": "V.C.A.Ground",
+        "lat": 21.15803,
+        "lon": 79.076646
+      },
+      {
+        "name": "Liberty Chowk / Nagpur Improvement Trust",
+        "lat": 21.157189,
+        "lon": 79.079707
+      },
+      {
+        "name": "R.B.I.Chowk",
+        "lat": 21.152381,
+        "lon": 79.080894
+      },
+      {
+        "name": "Vidhan Bhavan Chowk",
+        "lat": 21.152701,
+        "lon": 79.078588
+      },
+      {
+        "name": "Akashwani Chowk",
+        "lat": 21.152481,
+        "lon": 79.074676
+      },
+      {
+        "name": "D.A.G.P.T.Office",
+        "lat": 21.147917,
+        "lon": 79.074497
+      },
+      {
+        "name": "Institute Of Science Nagpur",
+        "lat": 21.145355,
+        "lon": 79.074404
+      },
+      {
+        "name": "Sitabuldi Bus Terminal",
+        "lat": 21.144028,
+        "lon": 79.078251
+      }
+    ],
+    "Maharaja Baug Terminal - Vaishnodevi Chowk": [
+      {
+        "name": "Vaishnodevi Chowk",
+        "lat": 21.148014,
+        "lon": 79.136949
+      },
+      {
+        "name": "Wardhaman Nagar Square",
+        "lat": 21.14823,
+        "lon": 79.133639
+      },
+      {
+        "name": "Ambedkar Chowk",
+        "lat": 21.148471,
+        "lon": 79.128483
+      },
+      {
+        "name": "Chapru Square",
+        "lat": 21.148638,
+        "lon": 79.124399
+      },
+      {
+        "name": "Telephone Exchange",
+        "lat": 21.148806,
+        "lon": 79.119435
+      },
+      {
+        "name": "Azamshah Chowk",
+        "lat": 21.149177,
+        "lon": 79.114218
+      },
+      {
+        "name": "Gandhi Putala",
+        "lat": 21.149818,
+        "lon": 79.109081
+      },
+      {
+        "name": "Gandhi Baug Chowk",
+        "lat": 21.15058,
+        "lon": 79.105853
+      },
+      {
+        "name": "Seva Sadan Bhavan",
+        "lat": 21.152859,
+        "lon": 79.095458
+      },
+      {
+        "name": "Gitanjali Chowk",
+        "lat": 21.153573,
+        "lon": 79.092448
+      },
+      {
+        "name": "Meyo Hospital",
+        "lat": 21.153542,
+        "lon": 79.091248
+      },
+      {
+        "name": "S.B.I. - Railway Station",
+        "lat": 21.153474,
+        "lon": 79.087231
+      },
+      {
+        "name": "Jai Stambh Chowk",
+        "lat": 21.153997,
+        "lon": 79.0857
+      },
+      {
+        "name": "Shri Mohini Complex",
+        "lat": 21.154201,
+        "lon": 79.084785
+      },
+      {
+        "name": "R.B.I. Chowk",
+        "lat": 21.152351,
+        "lon": 79.081016
+      },
+      {
+        "name": "Zero Mile Chowk",
+        "lat": 21.149623,
+        "lon": 79.08073
+      },
+      {
+        "name": "Morris College T Point",
+        "lat": 21.147196,
+        "lon": 79.081153
+      },
+      {
+        "name": "Moonlight",
+        "lat": 21.144249,
+        "lon": 79.080901
+      },
+      {
+        "name": "Sitabuldi Bus Terminal",
+        "lat": 21.144028,
+        "lon": 79.078251
+      }
+    ],
+    "Panchasheel Chowk (Dhantoli) - C.R.P.F.Stand": [
+      {
+        "name": "Panchasheel Chowk",
+        "lat": 21.139061,
+        "lon": 79.079729
+      },
+      {
+        "name": "Lokmat Chowk",
+        "lat": 21.135078,
+        "lon": 79.078327
+      },
+      {
+        "name": "Rahate Colony",
+        "lat": 21.130855,
+        "lon": 79.076914
+      },
+      {
+        "name": "Central Jail Quarters",
+        "lat": 21.126519,
+        "lon": 79.075421
+      },
+      {
+        "name": "Ajni Chowk",
+        "lat": 21.120655,
+        "lon": 79.073067
+      },
+      {
+        "name": "Sai Mandir",
+        "lat": 21.116838,
+        "lon": 79.071788
+      },
+      {
+        "name": "Chatrapati Shivaji Maharaj Chowk",
+        "lat": 21.110847,
+        "lon": 79.069705
+      },
+      {
+        "name": "Snehnagar",
+        "lat": 21.108015,
+        "lon": 79.069374
+      },
+      {
+        "name": "Jaiprakash Nagar",
+        "lat": 21.104702,
+        "lon": 79.068463
+      },
+      {
+        "name": "Somalwada Chowk",
+        "lat": 21.098057,
+        "lon": 79.066853
+      },
+      {
+        "name": "Ujwala Nagar",
+        "lat": 21.095585,
+        "lon": 79.066095
+      },
+      {
+        "name": "Sonegaon Police Station",
+        "lat": 21.092672,
+        "lon": 79.065401
+      },
+      {
+        "name": "Airport Metro Station",
+        "lat": 21.086756,
+        "lon": 79.063914
+      },
+      {
+        "name": "Barakholi",
+        "lat": 21.085065,
+        "lon": 79.063467
+      },
+      {
+        "name": "South Airport Metro Station",
+        "lat": 21.078687,
+        "lon": 79.060155
+      },
+      {
+        "name": "Kalkuthi Phata",
+        "lat": 21.081673,
+        "lon": 79.051049
+      },
+      {
+        "name": "Air Force Station",
+        "lat": 21.084937,
+        "lon": 79.043097
+      },
+      {
+        "name": "Bholebaba Nagar",
+        "lat": 21.089513,
+        "lon": 79.031205
+      },
+      {
+        "name": "Shivangaon T Point",
+        "lat": 21.092418,
+        "lon": 79.030855
+      },
+      {
+        "name": "Shivangaon",
+        "lat": 21.090556,
+        "lon": 79.026721
+      },
+      {
+        "name": "Tukdoji Square",
+        "lat": 21.089696,
+        "lon": 79.021535
+      },
+      {
+        "name": "Viktu Baba Nagar",
+        "lat": 21.089975,
+        "lon": 79.016121
+      },
+      {
+        "name": "C.R.P.F. Gate",
+        "lat": 21.089876,
+        "lon": 79.014001
+      },
+      {
+        "name": "C.R.P.F.Stand",
+        "lat": 21.096453,
+        "lon": 79.013033
+      }
+    ],
+    "Pardi - Y.C.C.E.College": [
+      {
+        "name": "Y.C.C.E.College",
+        "lat": 21.09676,
+        "lon": 78.979458
+      },
+      {
+        "name": "Rajiv Nagar",
+        "lat": 21.099943,
+        "lon": 78.984908
+      },
+      {
+        "name": "Electronic Zone Chowk",
+        "lat": 21.103655,
+        "lon": 78.990611
+      },
+      {
+        "name": "I.C.Chowk",
+        "lat": 21.108059,
+        "lon": 78.997349
+      },
+      {
+        "name": "Lokmanya Nagar Metro Station",
+        "lat": 21.110407497751023,
+        "lon": 79.00125323240383
+      },
+      {
+        "name": "Mahindra Colony",
+        "lat": 21.113226,
+        "lon": 79.00702
+      },
+      {
+        "name": "Balajinagar",
+        "lat": 21.115799,
+        "lon": 79.012068
+      },
+      {
+        "name": "Hingna Naka",
+        "lat": 21.117675,
+        "lon": 79.01672
+      },
+      {
+        "name": "Vasudev Nagar",
+        "lat": 21.118781,
+        "lon": 79.019558
+      },
+      {
+        "name": "Yashoda Nagar",
+        "lat": 21.120759,
+        "lon": 79.025621
+      },
+      {
+        "name": "Taki Silm",
+        "lat": 21.121209,
+        "lon": 79.028487
+      },
+      {
+        "name": "Hingna T Point",
+        "lat": 21.121578,
+        "lon": 79.03058
+      },
+      {
+        "name": "Mangalmurti Chowk",
+        "lat": 21.117565,
+        "lon": 79.03391
+      },
+      {
+        "name": "Dharampet Mahila Bank",
+        "lat": 21.116341,
+        "lon": 79.037304
+      },
+      {
+        "name": "Trimurti Nagar Chowk",
+        "lat": 21.114956,
+        "lon": 79.040616
+      },
+      {
+        "name": "N.I.T.Garden",
+        "lat": 21.11423,
+        "lon": 79.042824
+      },
+      {
+        "name": "Sambhaji Maharaj Chowk",
+        "lat": 21.113334,
+        "lon": 79.045298
+      },
+      {
+        "name": "Padole Hospital Chowk",
+        "lat": 21.112798,
+        "lon": 79.051065
+      },
+      {
+        "name": "Pratap Nagar Chowk",
+        "lat": 21.113644,
+        "lon": 79.056632
+      },
+      {
+        "name": "Sawarkar Nagar Chowk",
+        "lat": 21.112289,
+        "lon": 79.064616
+      },
+      {
+        "name": "Chatrapati Shivaji Maharaj Chowk",
+        "lat": 21.110847,
+        "lon": 79.069705
+      },
+      {
+        "name": "Chhatrapati Hall",
+        "lat": 21.11037,
+        "lon": 79.073789
+      },
+      {
+        "name": "Narendra Nagar Fire Station",
+        "lat": 21.107757,
+        "lon": 79.080281
+      },
+      {
+        "name": "Tukaram Hall",
+        "lat": 21.106765,
+        "lon": 79.082847
+      },
+      {
+        "name": "Shatabdi Chowk",
+        "lat": 21.106034,
+        "lon": 79.088116
+      },
+      {
+        "name": "Omkar Nagar",
+        "lat": 21.105602,
+        "lon": 79.092741
+      },
+      {
+        "name": "Manewada Chowk",
+        "lat": 21.105271,
+        "lon": 79.101465
+      },
+      {
+        "name": "Lavkush Nagar / Tapasya Chowk",
+        "lat": 21.10557,
+        "lon": 79.109352
+      },
+      {
+        "name": "Uday Nagar",
+        "lat": 21.106135,
+        "lon": 79.11288
+      },
+      {
+        "name": "Sanjay Gandhi Nagar",
+        "lat": 21.106898,
+        "lon": 79.116695
+      },
+      {
+        "name": "Malgi Nagar",
+        "lat": 21.107653,
+        "lon": 79.119632
+      },
+      {
+        "name": "Power House",
+        "lat": 21.108563,
+        "lon": 79.12342
+      },
+      {
+        "name": "Dighori Fly Over",
+        "lat": 21.110974,
+        "lon": 79.128325
+      },
+      {
+        "name": "Aradhana Nagar",
+        "lat": 21.11291,
+        "lon": 79.130324
+      },
+      {
+        "name": "Kharbi Chowk",
+        "lat": 21.116952,
+        "lon": 79.133867
+      },
+      {
+        "name": "Murali Nandan Nagar",
+        "lat": 21.123226,
+        "lon": 79.137698
+      },
+      {
+        "name": "Wathoda Chowk",
+        "lat": 21.132833,
+        "lon": 79.142977
+      },
+      {
+        "name": "Swaminarayan Mandir Dighori",
+        "lat": 21.137706,
+        "lon": 79.144705
+      },
+      {
+        "name": "Sangharsh Nagar",
+        "lat": 21.143819,
+        "lon": 79.145833
+      },
+      {
+        "name": "Prajapati Nagar Chowk",
+        "lat": 21.148231,
+        "lon": 79.146226
+      },
+      {
+        "name": "Old Pardi Naka Chowk",
+        "lat": 21.151152,
+        "lon": 79.150123
+      },
+      {
+        "name": "Subhan Nagar",
+        "lat": 21.150803,
+        "lon": 79.152815
+      },
+      {
+        "name": "Pardi Bazar Chowk",
+        "lat": 21.150173,
+        "lon": 79.155271
+      },
+      {
+        "name": "Pardi",
+        "lat": 21.149724,
+        "lon": 79.157855
+      }
+    ],
+    "Sitabuldi - Besa Chowk": [
+      {
+        "name": "Sitabuldi",
+        "lat": 21.141923,
+        "lon": 79.080433
+      },
+      {
+        "name": "Sitabuldi Bus Terminal",
+        "lat": 21.144028,
+        "lon": 79.078251
+      },
+      {
+        "name": "Institute Of Science Nagpur",
+        "lat": 21.145355,
+        "lon": 79.074404
+      },
+      {
+        "name": "Akashwani Chowk",
+        "lat": 21.152481,
+        "lon": 79.074676
+      },
+      {
+        "name": "Vidhan Bhavan Chowk",
+        "lat": 21.152701,
+        "lon": 79.078588
+      },
+      {
+        "name": "R.B.I. Chowk",
+        "lat": 21.152351,
+        "lon": 79.081016
+      },
+      {
+        "name": "Zero Mile Chowk",
+        "lat": 21.149623,
+        "lon": 79.08073
+      },
+      {
+        "name": "Morris College T Point",
+        "lat": 21.147196,
+        "lon": 79.081153
+      },
+      {
+        "name": "Loha Pool / Manas Chowk",
+        "lat": 21.145826,
+        "lon": 79.087977
+      },
+      {
+        "name": "Cottan Market",
+        "lat": 21.14502,
+        "lon": 79.089453
+      },
+      {
+        "name": "Ghat Road",
+        "lat": 21.140071,
+        "lon": 79.095652
+      },
+      {
+        "name": "Baidhyanath Chowk",
+        "lat": 21.135696,
+        "lon": 79.096437
+      },
+      {
+        "name": "Baidynath Untakhana",
+        "lat": 21.133472,
+        "lon": 79.09719
+      },
+      {
+        "name": "Medical Chowk",
+        "lat": 21.131367,
+        "lon": 79.098181
+      },
+      {
+        "name": "Krida Chowk",
+        "lat": 21.129634,
+        "lon": 79.105038
+      },
+      {
+        "name": "Vima Hospital",
+        "lat": 21.126669,
+        "lon": 79.105094
+      },
+      {
+        "name": "Tukdoji Putala Chowk",
+        "lat": 21.123445,
+        "lon": 79.104849
+      },
+      {
+        "name": "Rajkamal Square",
+        "lat": 21.123123,
+        "lon": 79.100881
+      },
+      {
+        "name": "Jadu Mahal Square",
+        "lat": 21.118721,
+        "lon": 79.100395
+      },
+      {
+        "name": "Siddheshwar Hall",
+        "lat": 21.117993,
+        "lon": 79.104393
+      },
+      {
+        "name": "Dyaneshwar Nagar Gate",
+        "lat": 21.115623,
+        "lon": 79.104272
+      },
+      {
+        "name": "Balaji Nagar",
+        "lat": 21.109414,
+        "lon": 79.103568
+      },
+      {
+        "name": "Mahalaxmi Nagar",
+        "lat": 21.106688,
+        "lon": 79.103035
+      },
+      {
+        "name": "Shri Hari Nagar",
+        "lat": 21.10224,
+        "lon": 79.101837
+      },
+      {
+        "name": "Tata Square",
+        "lat": 21.097411,
+        "lon": 79.099909
+      },
+      {
+        "name": "Shahu Nahar",
+        "lat": 21.094545,
+        "lon": 79.098647
+      },
+      {
+        "name": "Alankar Nagar",
+        "lat": 21.092419,
+        "lon": 79.09775
+      },
+      {
+        "name": "Mangldip Nagar",
+        "lat": 21.090933,
+        "lon": 79.097109
+      },
+      {
+        "name": "Besa Ghat",
+        "lat": 21.088583,
+        "lon": 79.096323
+      },
+      {
+        "name": "Besa Chowk",
+        "lat": 21.085012,
+        "lon": 79.095815
+      }
+    ],
+    "Sitabuldi - Defence Gate No. 3": [
+      {
+        "name": "Sitabuldi",
+        "lat": 21.141923,
+        "lon": 79.080433
+      },
+      {
+        "name": "Sitabuldi Bus Terminal",
+        "lat": 21.144028,
+        "lon": 79.078251
+      },
+      {
+        "name": "Maharaja Baug Gate",
+        "lat": 21.145065,
+        "lon": 79.074804
+      },
+      {
+        "name": "Bhole Petrol Pump",
+        "lat": 21.146216,
+        "lon": 79.068243
+      },
+      {
+        "name": "Giripeth",
+        "lat": 21.146511,
+        "lon": 79.06614
+      },
+      {
+        "name": "Law College Chowk",
+        "lat": 21.14678,
+        "lon": 79.06201
+      },
+      {
+        "name": "Ravi Nagar",
+        "lat": 21.147461,
+        "lon": 79.056263
+      },
+      {
+        "name": "L.I.T.College",
+        "lat": 21.148182,
+        "lon": 79.049035
+      },
+      {
+        "name": "Bharat Nagar",
+        "lat": 21.148602,
+        "lon": 79.044544
+      },
+      {
+        "name": "Futala Lake",
+        "lat": 21.149101,
+        "lon": 79.04081
+      },
+      {
+        "name": "University Campus",
+        "lat": 21.149382,
+        "lon": 79.038475
+      },
+      {
+        "name": "Postal Colony",
+        "lat": 21.150102,
+        "lon": 79.032416
+      },
+      {
+        "name": "Rastriya Murg Sandharan",
+        "lat": 21.151977,
+        "lon": 79.025172
+      },
+      {
+        "name": "Maruti Seva",
+        "lat": 21.152677,
+        "lon": 79.020948
+      },
+      {
+        "name": "Wadi 10 No. Naka",
+        "lat": 21.153417,
+        "lon": 79.016906
+      },
+      {
+        "name": "Control Wadi",
+        "lat": 21.153798,
+        "lon": 79.012983
+      },
+      {
+        "name": "Khadgaon Road",
+        "lat": 21.152804,
+        "lon": 79.001939
+      },
+      {
+        "name": "Dattawadi",
+        "lat": 21.148963,
+        "lon": 78.99302
+      },
+      {
+        "name": "Dattawadi Police Station",
+        "lat": 21.147202,
+        "lon": 78.990581
+      },
+      {
+        "name": "Bharat Apartments",
+        "lat": 21.145662,
+        "lon": 78.984688
+      },
+      {
+        "name": "Navneet Nagar",
+        "lat": 21.144537,
+        "lon": 78.979463
+      },
+      {
+        "name": "8th Mile Gate",
+        "lat": 21.144458,
+        "lon": 78.976381
+      },
+      {
+        "name": "Satpuda House",
+        "lat": 21.137314,
+        "lon": 78.97622
+      },
+      {
+        "name": "Central School",
+        "lat": 21.137285,
+        "lon": 78.980097
+      },
+      {
+        "name": "Uco Bank Wadi",
+        "lat": 21.136986,
+        "lon": 78.983645
+      },
+      {
+        "name": "Tulani Bazar",
+        "lat": 21.134885,
+        "lon": 78.986341
+      },
+      {
+        "name": "Post Office",
+        "lat": 21.132058,
+        "lon": 78.982332
+      },
+      {
+        "name": "Defence Gate No. 1",
+        "lat": 21.131164,
+        "lon": 78.97685
+      },
+      {
+        "name": "Defence Gate No. 3",
+        "lat": 21.127762,
+        "lon": 78.977287
+      }
+    ],
+    "Sitabuldi - Koradi Depot": [
+      {
+        "name": "Sitabuldi",
+        "lat": 21.141923,
+        "lon": 79.080433
+      },
+      {
+        "name": "Moonlight",
+        "lat": 21.144249,
+        "lon": 79.080901
+      },
+      {
+        "name": "Morris College T Point",
+        "lat": 21.147196,
+        "lon": 79.081153
+      },
+      {
+        "name": "Zero Mile Chowk",
+        "lat": 21.149623,
+        "lon": 79.08073
+      },
+      {
+        "name": "R.B.I.Chowk",
+        "lat": 21.152381,
+        "lon": 79.080894
+      },
+      {
+        "name": "Liberty Chowk / Nagpur Improvement Trust",
+        "lat": 21.157189,
+        "lon": 79.079707
+      },
+      {
+        "name": "Moti Mahal",
+        "lat": 21.161361,
+        "lon": 79.079564
+      },
+      {
+        "name": "Sadar Anjuman",
+        "lat": 21.163463,
+        "lon": 79.079536
+      },
+      {
+        "name": "Sardar Chhaoni Chowk",
+        "lat": 21.167325,
+        "lon": 79.078685
+      },
+      {
+        "name": "Pagal Khana Chowk",
+        "lat": 21.175179,
+        "lon": 79.079142
+      },
+      {
+        "name": "Nelson Chowk",
+        "lat": 21.178941,
+        "lon": 79.079171
+      },
+      {
+        "name": "Indoor Stadium Mankapur",
+        "lat": 21.182839,
+        "lon": 79.078873
+      },
+      {
+        "name": "Mankapur Ring Road",
+        "lat": 21.186901,
+        "lon": 79.079059
+      },
+      {
+        "name": "Faras Chowk",
+        "lat": 21.191813,
+        "lon": 79.078537
+      },
+      {
+        "name": "Railway Crossing 1",
+        "lat": 21.196074,
+        "lon": 79.078208
+      },
+      {
+        "name": "Wox Cooler",
+        "lat": 21.199075,
+        "lon": 79.078008
+      },
+      {
+        "name": "Koradi Naka",
+        "lat": 21.207688,
+        "lon": 79.077261
+      },
+      {
+        "name": "Railway Crossing 2",
+        "lat": 21.216659,
+        "lon": 79.079771
+      },
+      {
+        "name": "Modern School",
+        "lat": 21.22093,
+        "lon": 79.081076
+      },
+      {
+        "name": "Ganesh Nagari",
+        "lat": 21.225741,
+        "lon": 79.082443
+      },
+      {
+        "name": "Panjara Bus Stand",
+        "lat": 21.231002,
+        "lon": 79.083669
+      },
+      {
+        "name": "K.T.P.S.Colony Gate No.1",
+        "lat": 21.233843,
+        "lon": 79.084134
+      },
+      {
+        "name": "K.T.P.S.Colony Gate No.2",
+        "lat": 21.236703,
+        "lon": 79.084578
+      },
+      {
+        "name": "Mahadula",
+        "lat": 21.244594,
+        "lon": 79.084546
+      },
+      {
+        "name": "Power House Koradi",
+        "lat": 21.249834,
+        "lon": 79.084993
+      },
+      {
+        "name": "Koradi Mandir Parking",
+        "lat": 21.249295,
+        "lon": 79.090021
+      },
+      {
+        "name": "Koradi Mandir",
+        "lat": 21.250016,
+        "lon": 79.093462
+      },
+      {
+        "name": "Koradi Depot",
+        "lat": 21.250826,
+        "lon": 79.102342
+      }
+    ],
+    "Sitabuldi - Pardi": [
+      {
+        "name": "Sitabuldi",
+        "lat": 21.141923,
+        "lon": 79.080433
+      },
+      {
+        "name": "Moonlight",
+        "lat": 21.144249,
+        "lon": 79.080901
+      },
+      {
+        "name": "Morris College T Point",
+        "lat": 21.147196,
+        "lon": 79.081153
+      },
+      {
+        "name": "Loha Pool / Manas Chowk",
+        "lat": 21.145826,
+        "lon": 79.087977
+      },
+      {
+        "name": "Cottan Market",
+        "lat": 21.14502,
+        "lon": 79.089453
+      },
+      {
+        "name": "Agyaramdevi Chowk",
+        "lat": 21.144483,
+        "lon": 79.095361
+      },
+      {
+        "name": "MSRTC S.T.Stand",
+        "lat": 21.140489,
+        "lon": 79.096084
+      },
+      {
+        "name": "Model Mill",
+        "lat": 21.140463,
+        "lon": 79.09756
+      },
+      {
+        "name": "Tukdoji Putala Ganesh Peth Colony",
+        "lat": 21.141308,
+        "lon": 79.100613
+      },
+      {
+        "name": "Tilak Putla",
+        "lat": 21.144142,
+        "lon": 79.101229
+      },
+      {
+        "name": "Chitnis Park Mahal",
+        "lat": 21.145377,
+        "lon": 79.101482
+      },
+      {
+        "name": "Narsing Talkies",
+        "lat": 21.145222,
+        "lon": 79.102861
+      },
+      {
+        "name": "Ayachit Mandir",
+        "lat": 21.145166,
+        "lon": 79.103468
+      },
+      {
+        "name": "Shivaji Nagar Gate",
+        "lat": 21.144965,
+        "lon": 79.106377
+      },
+      {
+        "name": "Gangabai Ghat",
+        "lat": 21.143313,
+        "lon": 79.112082
+      },
+      {
+        "name": "Old Bagadganj",
+        "lat": 21.142982,
+        "lon": 79.11542
+      },
+      {
+        "name": "Shastri Nagar Chowk",
+        "lat": 21.142651,
+        "lon": 79.119852
+      },
+      {
+        "name": "Hirvi Nagar",
+        "lat": 21.146959,
+        "lon": 79.134035
+      },
+      {
+        "name": "Wardhman Nagar",
+        "lat": 21.151633,
+        "lon": 79.134902
+      },
+      {
+        "name": "Haldiram Factory",
+        "lat": 21.151144,
+        "lon": 79.137744
+      },
+      {
+        "name": "Railway Crossing Pardi",
+        "lat": 21.151175,
+        "lon": 79.144264
+      },
+      {
+        "name": "Old Pardi Naka Chowk",
+        "lat": 21.151152,
+        "lon": 79.150123
+      },
+      {
+        "name": "Subhan Nagar",
+        "lat": 21.150803,
+        "lon": 79.152815
+      },
+      {
+        "name": "Pardi Bazar Chowk",
+        "lat": 21.150173,
+        "lon": 79.155271
+      },
+      {
+        "name": "Pardi",
+        "lat": 21.149724,
+        "lon": 79.157855
+      }
+    ],
+    "Sitabuldi - Sonegaon": [
+      {
+        "name": "Sonegaon",
+        "lat": 21.098929,
+        "lon": 79.045971
+      },
+      {
+        "name": "Sonegaon H.B. Estate",
+        "lat": 21.097949,
+        "lon": 79.051794
+      },
+      {
+        "name": "Sahakar Nagar",
+        "lat": 21.101393,
+        "lon": 79.054526
+      },
+      {
+        "name": "Khamal Bazar Square",
+        "lat": 21.104717,
+        "lon": 79.058074
+      },
+      {
+        "name": "Khamala Wasti",
+        "lat": 21.10704,
+        "lon": 79.059741
+      },
+      {
+        "name": "Arunrao Kalode School",
+        "lat": 21.108602,
+        "lon": 79.061658
+      },
+      {
+        "name": "Khamla Chowk",
+        "lat": 21.109343,
+        "lon": 79.062373
+      },
+      {
+        "name": "Sawarkar Nagar Square / Parate Lawn",
+        "lat": 21.112055,
+        "lon": 79.06474
+      },
+      {
+        "name": "Orange City Hospital",
+        "lat": 21.113737,
+        "lon": 79.065069
+      },
+      {
+        "name": "R.P.T.S.Gate",
+        "lat": 21.118982,
+        "lon": 79.0647
+      },
+      {
+        "name": "Aath Rasta Chowk",
+        "lat": 21.122105,
+        "lon": 79.064318
+      },
+      {
+        "name": "Laxmi Nagar",
+        "lat": 21.125428,
+        "lon": 79.063907
+      },
+      {
+        "name": "Bajaj Nagar",
+        "lat": 21.130062,
+        "lon": 79.062687
+      },
+      {
+        "name": "Shankar Nagar",
+        "lat": 21.135756,
+        "lon": 79.060193
+      },
+      {
+        "name": "Dharampeth",
+        "lat": 21.136631,
+        "lon": 79.063954
+      },
+      {
+        "name": "Children Tarffic Park",
+        "lat": 21.137184,
+        "lon": 79.066074
+      },
+      {
+        "name": "Coffee House",
+        "lat": 21.140066,
+        "lon": 79.065702
+      },
+      {
+        "name": "Law College",
+        "lat": 21.146782,
+        "lon": 79.062013
+      },
+      {
+        "name": "Giripeth",
+        "lat": 21.146511,
+        "lon": 79.06614
+      },
+      {
+        "name": "Bhole Petrol Pump",
+        "lat": 21.146216,
+        "lon": 79.068243
+      },
+      {
+        "name": "Maharaja Baug Gate",
+        "lat": 21.145065,
+        "lon": 79.074804
+      },
+      {
+        "name": "Sitabuldi Bus Terminal",
+        "lat": 21.144028,
+        "lon": 79.078251
+      },
+      {
+        "name": "Jhansi Rani Chowk",
+        "lat": 21.140898,
+        "lon": 79.078251
+      },
+      {
+        "name": "Sitabuldi",
+        "lat": 21.141923,
+        "lon": 79.080433
+      }
+    ],
+    "Sitabuldi - Suradevi": [
+      {
+        "name": "Suradevi",
+        "lat": 21.247368,
+        "lon": 79.122648
+      },
+      {
+        "name": "Suradevi Gaon",
+        "lat": 21.248847,
+        "lon": 79.117791
+      },
+      {
+        "name": "Koradi Railway Gate",
+        "lat": 21.250227,
+        "lon": 79.110853
+      },
+      {
+        "name": "Koradi Depot",
+        "lat": 21.250826,
+        "lon": 79.102342
+      },
+      {
+        "name": "Koradi Mandir",
+        "lat": 21.250016,
+        "lon": 79.093462
+      },
+      {
+        "name": "Koradi Mandir Parking",
+        "lat": 21.249295,
+        "lon": 79.090021
+      },
+      {
+        "name": "Power House Koradi",
+        "lat": 21.249834,
+        "lon": 79.084993
+      },
+      {
+        "name": "Mahadula",
+        "lat": 21.244594,
+        "lon": 79.084546
+      },
+      {
+        "name": "K.T.P.S.Colony Gate No.2",
+        "lat": 21.236703,
+        "lon": 79.084578
+      },
+      {
+        "name": "K.T.P.S.Colony Gate No.1",
+        "lat": 21.233843,
+        "lon": 79.084134
+      },
+      {
+        "name": "Panjara Bus Stand",
+        "lat": 21.231002,
+        "lon": 79.083669
+      },
+      {
+        "name": "Ganesh Nagari",
+        "lat": 21.225741,
+        "lon": 79.082443
+      },
+      {
+        "name": "Modern School",
+        "lat": 21.22093,
+        "lon": 79.081076
+      },
+      {
+        "name": "Railway Crossing 2",
+        "lat": 21.216659,
+        "lon": 79.079771
+      },
+      {
+        "name": "Koradi Naka",
+        "lat": 21.207688,
+        "lon": 79.077261
+      },
+      {
+        "name": "Wox Cooler",
+        "lat": 21.199075,
+        "lon": 79.078008
+      },
+      {
+        "name": "Railway Crossing 1",
+        "lat": 21.196074,
+        "lon": 79.078208
+      },
+      {
+        "name": "Faras Chowk",
+        "lat": 21.191813,
+        "lon": 79.078537
+      },
+      {
+        "name": "Mankapur Ring Road",
+        "lat": 21.186901,
+        "lon": 79.079059
+      },
+      {
+        "name": "Indoor Stadium Mankapur",
+        "lat": 21.182839,
+        "lon": 79.078873
+      },
+      {
+        "name": "Nelson Chowk",
+        "lat": 21.178941,
+        "lon": 79.079171
+      },
+      {
+        "name": "Pagal Khana Chowk",
+        "lat": 21.175179,
+        "lon": 79.079142
+      },
+      {
+        "name": "Sardar Chhaoni Chowk",
+        "lat": 21.167325,
+        "lon": 79.078685
+      },
+      {
+        "name": "Sadar Anjuman",
+        "lat": 21.163463,
+        "lon": 79.079536
+      },
+      {
+        "name": "Moti Mahal",
+        "lat": 21.161361,
+        "lon": 79.079564
+      },
+      {
+        "name": "Liberty Chowk / Nagpur Improvement Trust",
+        "lat": 21.157189,
+        "lon": 79.079707
+      },
+      {
+        "name": "R.B.I.Chowk",
+        "lat": 21.152381,
+        "lon": 79.080894
+      },
+      {
+        "name": "Zero Mile Chowk",
+        "lat": 21.149623,
+        "lon": 79.08073
+      },
+      {
+        "name": "Morris College T Point",
+        "lat": 21.147196,
+        "lon": 79.081153
+      },
+      {
+        "name": "Moonlight",
+        "lat": 21.144249,
+        "lon": 79.080901
+      },
+      {
+        "name": "Sitabuldi",
+        "lat": 21.141923,
+        "lon": 79.080433
+      }
+    ],
+    "Sitabuldi - jaitala": [
+      {
+        "name": "Jhansi Rani Chowk",
+        "lat": 21.140898,
+        "lon": 79.078251
+      },
+      {
+        "name": "University Library",
+        "lat": 21.139183,
+        "lon": 79.072882
+      },
+      {
+        "name": "Alankar Chowk",
+        "lat": 21.137797,
+        "lon": 79.068734
+      },
+      {
+        "name": "Dharampeth",
+        "lat": 21.136631,
+        "lon": 79.063954
+      },
+      {
+        "name": "Shankar Nagar",
+        "lat": 21.135756,
+        "lon": 79.060193
+      },
+      {
+        "name": "Shankar Nagar-2",
+        "lat": 21.134801,
+        "lon": 79.058267
+      },
+      {
+        "name": "L.A.D.College",
+        "lat": 21.133275,
+        "lon": 79.0556
+      },
+      {
+        "name": "Abhyankar Nagar",
+        "lat": 21.128727,
+        "lon": 79.057438
+      },
+      {
+        "name": "Shraddhanand Peth Chowk",
+        "lat": 21.124744,
+        "lon": 79.058865
+      },
+      {
+        "name": "Mate Chowk",
+        "lat": 21.121519,
+        "lon": 79.056467
+      },
+      {
+        "name": "Pratap Nagar (Durga Mandir)",
+        "lat": 21.11607,
+        "lon": 79.05675
+      },
+      {
+        "name": "Pratap Nagar",
+        "lat": 21.113693,
+        "lon": 79.056616
+      },
+      {
+        "name": "Padole Hospital Chowk",
+        "lat": 21.112798,
+        "lon": 79.051065
+      },
+      {
+        "name": "Sambhaji Maharaj Chowk",
+        "lat": 21.113334,
+        "lon": 79.045298
+      },
+      {
+        "name": "N.I.T.Garden",
+        "lat": 21.11423,
+        "lon": 79.042824
+      },
+      {
+        "name": "Trimurti Nagar Chowk",
+        "lat": 21.114956,
+        "lon": 79.040616
+      },
+      {
+        "name": "Dharampet Mahila Bank",
+        "lat": 21.116341,
+        "lon": 79.037304
+      },
+      {
+        "name": "Mangalmurti Chowk",
+        "lat": 21.117565,
+        "lon": 79.03391
+      },
+      {
+        "name": "Jaitala Bazar Chowk",
+        "lat": 21.115256,
+        "lon": 79.030413
+      },
+      {
+        "name": "Prasad Nagar",
+        "lat": 21.114037,
+        "lon": 79.029144
+      },
+      {
+        "name": "Ashtavinayak Nagar",
+        "lat": 21.112818,
+        "lon": 79.028048
+      },
+      {
+        "name": "Jaitala Road Godavari",
+        "lat": 21.111919,
+        "lon": 79.02635
+      },
+      {
+        "name": "Godavari Chowk",
+        "lat": 21.108738,
+        "lon": 79.022292
+      },
+      {
+        "name": "Jaitala",
+        "lat": 21.10828,
+        "lon": 79.017848
+      }
+    ]
+  }
+}
