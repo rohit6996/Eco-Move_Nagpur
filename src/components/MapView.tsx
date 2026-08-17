@@ -106,7 +106,7 @@ export default function MapView({
     <div className="relative h-full w-full" style={{ cursor: (picking || nearbyMode) ? "crosshair" : undefined }}>
     <MapContainer
       center={[21.1458, 79.0882]}
-      zoom={12}
+      zoom={13}
       className="h-full w-full"
       scrollWheelZoom
       style={{ background: "#eef2f4" }}
@@ -118,21 +118,41 @@ export default function MapView({
         maxZoom={21}
       />
 
-      {/* Route network polylines — metro lines use their brand colour */}
-      {showNetwork &&
-        allLines.map((l) => (
-          <Polyline
-            key={l.id}
-            positions={l.points.map((p) => [p.lat, p.lon] as [number, number])}
-            pathOptions={{
-              color: lineColor(l.mode, l.name),
-              weight: l.mode === "metro" ? 4 : 1.5,
-              opacity: l.mode === "metro" ? 0.55 : 0.22,
-            }}
-          >
-            {l.mode === "metro" && <Tooltip sticky>{l.name}</Tooltip>}
-          </Polyline>
-        ))}
+            {/* Metro Line Polylines — ONLY shown when Metro toggle is clicked */}
+      {showMetroStations &&
+        allLines
+          .filter((l) => l.mode === "metro")
+          .map((l) => (
+            <Polyline
+              key={l.id}
+              positions={(l.geometry ?? l.points).map((p) => [p.lat, p.lon] as [number, number])}
+              pathOptions={{
+                color: lineColor(l.mode, l.name),
+                weight: 4.5,
+                opacity: 0.85,
+              }}
+            >
+              <Tooltip sticky>{l.name}</Tooltip>
+            </Polyline>
+          ))}
+
+      {/* Bus Route Polylines — shown only when Bus Stops toggle is on */}
+      {showBusStops &&
+        allLines
+          .filter((l) => l.mode === "bus")
+          .map((l) => (
+            <Polyline
+              key={l.id}
+              positions={(l.geometry ?? l.points).map((p) => [p.lat, p.lon] as [number, number])}
+              pathOptions={{
+                color: lineColor(l.mode, l.name),
+                weight: 2,
+                opacity: 0.35,
+              }}
+            >
+              <Tooltip sticky>{l.name}</Tooltip>
+            </Polyline>
+          ))}
 
       {/* Bus stop dots overlay */}
       {showBusStops &&
@@ -191,28 +211,35 @@ export default function MapView({
         />
       ))}
 
-      {/* Active journey stop markers */}
-      {journey?.legs
-        .filter((l) => l.mode !== "walk")
-        .flatMap((leg, li) =>
-          leg.path.map((p, pi) => (
-            <CircleMarker
-              key={`${li}-${pi}`}
-              center={[p.lat, p.lon]}
-              radius={pi === 0 || pi === leg.path.length - 1 ? 6 : 3}
-              pathOptions={{
-                color: leg.mode === "metro" ? lineColor("metro", leg.line ?? "") : MODE_COLOR[leg.mode]!,
-                fillColor: "#ffffff",
-                fillOpacity: 1,
-                weight: 2,
-              }}
-            >
-              <Tooltip>{leg.stops?.[pi] ?? leg.line}</Tooltip>
-            </CircleMarker>
-          )),
-        )}
+      {/* Active journey boarding and alighting stop markers */}
+        {journey?.legs
+          .filter((l) => l.mode !== "walk")
+          .flatMap((leg, li) => {
+            const startPt = leg.path[0];
+            const endPt = leg.path[leg.path.length - 1];
+            const pts = [
+              { pt: startPt, label: `Board: ${leg.from} (${leg.line ?? leg.mode})`, isStart: true },
+              { pt: endPt, label: `Alight: ${leg.to}`, isStart: false },
+            ].filter((x): x is { pt: { lat: number; lon: number }; label: string; isStart: boolean } => x.pt != null);
 
-      {/* Origin pin — blue pulsing dot for GPS location, dark dot otherwise */}
+            return pts.map(({ pt: p, label }, pi) => (
+              <CircleMarker
+                key={`stn-${li}-${pi}`}
+                center={[p.lat, p.lon]}
+                radius={6}
+                pathOptions={{
+                  color: leg.mode === "metro" ? lineColor("metro", leg.line ?? "") : MODE_COLOR[leg.mode]!,
+                  fillColor: "#ffffff",
+                  fillOpacity: 1,
+                  weight: 3,
+                }}
+              >
+                <Tooltip>{label}</Tooltip>
+              </CircleMarker>
+            ));
+          })}
+
+        {/* Origin pin — blue pulsing dot for GPS location, dark dot otherwise */}
       {origin && isCurrentLocation && (
         <>
           {/* Outer accuracy ring */}

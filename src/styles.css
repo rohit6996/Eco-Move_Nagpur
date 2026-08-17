@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -19,6 +20,19 @@
  */
 
 @theme inline {
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* Nagpur Connect legacy theme tokens */
+  --color-nagpur-bg: #F8FAFC;
+  --color-nagpur-white: #FFFFFF;
+  --color-nagpur-blue-primary: #1976D2;
+  --color-nagpur-blue-light: #EAF4FB;
+  --color-nagpur-navy: #123B5D;
+  --color-nagpur-green-primary: #2E8B57;
+  --color-nagpur-green-light: #EAF7EF;
+  --color-nagpur-orange: #F4A261;
+  --color-nagpur-text-main: #1F2937;
+  --color-nagpur-text-secondary: #64748B;
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
