@@ -2,13 +2,12 @@ import lineGeometriesData from "@/data/lineGeometries.json";
 import { buildNetwork, haversine, type Place, type TransitNetwork } from "./network";
 import { walkRoute, clearWalkCache } from "./ors";
 
-// Purge any cached ORS results from a previous session / preference change
 clearWalkCache();
 
 
 export type Preference = "balanced" | "fastest" | "least_walk" | "fewest_transfers" | "low_co2";
 
-/** Tunable model parameters - change here, the algorithm is untouched. */
+/** Average parameters */
 export const PARAMS = {
   walkSpeedKmh: 4.8,
   busSpeedKmh: 17,
@@ -18,7 +17,7 @@ export const PARAMS = {
   transferPenaltyMin: 3,
   maxAccessWalkM: 1500,
   maxTransferWalkM: 700,
-  co2PerKm: { walk: 0, bus: 68, metro: 22 }, // grams per passenger-km
+  co2PerKm: { walk: 0, bus: 68, metro: 22 },
 };
 
 export const PREFERENCE_WEIGHTS: Record<
@@ -52,7 +51,6 @@ export interface Leg {
   co2g: number;
   stops?: string[];
   path: { lat: number; lon: number }[];
-  /** Average headway in minutes - only set for bus/metro legs */
   frequencyMin?: number;
 }
 
@@ -93,7 +91,6 @@ interface Edge {
   distanceM: number;
   timeMin: number;
   co2g: number;
-  /** True when this edge's walk cost came from the ORS API (not haversine estimate) */
   orsResolved?: boolean;
 }
 
@@ -116,12 +113,6 @@ function walkEdge(from: LatLng, to: LatLng, distanceM?: number) {
   return { d, t: (d / 1000 / PARAMS.walkSpeedKmh) * 60 };
 }
 
-// ---------------------------------------------------------------------------
-// ORS Walk-cost cache
-// Keyed "lat1,lon1|lat2,lon2" -> { distanceM, timeMin }
-// This is separate from ors.ts's internal cache because here we only store
-// the scalar cost values (no full geometry) for the graph edges.
-// ---------------------------------------------------------------------------
 const walkCostCache = new Map<string, { distanceM: number; timeMin: number }>();
 
 function walkCacheKey(
@@ -144,7 +135,6 @@ async function fetchWalkCost(
   const cached = walkCostCache.get(key);
   if (cached) return cached;
 
-  // Skip trivially short pairs - haversine is fine for <80 m
   const hvDist = haversine(from.lat, from.lon, to.lat, to.lon);
   if (hvDist < 80) return null;
 
@@ -156,10 +146,8 @@ async function fetchWalkCost(
   return result;
 }
 
-// ---------------------------------------------------------------------------
 // Geospatial Grid Spatial Index
 // Replaces O(N^2) pairwise comparisons with O(1) spatial bucket queries.
-// ---------------------------------------------------------------------------
 
 /**
  * 2D Geospatial Hash Grid Spatial Index for ultra-fast radius & k-NN queries.
@@ -174,9 +162,7 @@ export class SpatialIndex<T extends { lat: number; lon: number }> {
   private grid = new Map<string, T[]>();
 
   constructor(cellSizeMeters = 500) {
-    // 1 deg latitude is approx 111,000 meters
     this.cellSizeLat = cellSizeMeters / 111000;
-    // 1 deg longitude at Nagpur latitude (~21.15 deg) is approx 103,500 meters
     this.cellSizeLon = cellSizeMeters / (111000 * Math.cos((21.15 * Math.PI) / 180));
   }
 
@@ -191,7 +177,6 @@ export class SpatialIndex<T extends { lat: number; lon: number }> {
     ];
   }
 
-  /** Insert an item into its corresponding spatial bucket */
   insert(item: T): void {
     const [cx, cy] = this.getCellCoords(item.lat, item.lon);
     const key = this.cellKey(cx, cy);
@@ -203,7 +188,6 @@ export class SpatialIndex<T extends { lat: number; lon: number }> {
     }
   }
 
-  /** Bulk insert multiple items */
   insertAll(items: T[]): void {
     for (let i = 0; i < items.length; i++) {
       this.insert(items[i]!);
@@ -248,7 +232,6 @@ export class SpatialIndex<T extends { lat: number; lon: number }> {
   }
 }
 
-/** Global spatial index populated with all transit stops and places */
 export const placeSpatialIndex = new SpatialIndex<Place>(500);
 placeSpatialIndex.insertAll(net.placeList);
 
@@ -296,7 +279,6 @@ placeSpatialIndex.insertAll(net.placeList);
   }
 
   // 2. Walking transfer edges between nearby places:
-  // Query only adjacent spatial buckets within maxTransferWalkM in O(N) time (replacing O(N^2) pairwise scan)
   const seenPairs = new Set<string>();
   for (const A of net.placeList) {
     const nearby = placeSpatialIndex.queryRadius(A, PARAMS.maxTransferWalkM);
@@ -355,10 +337,6 @@ function cost(m: Metrics, pref: Preference) {
   );
 }
 
-// ---------------------------------------------------------------------------
-// State-Aware Dijkstra Data Structures & MinHeap
-// State = Node + Current Transit Line + Transfer Count
-// ---------------------------------------------------------------------------
 
 interface QueueItem {
   key: string;
@@ -369,7 +347,7 @@ interface QueueItem {
 }
 
 /**
- * Binary Min-Heap Priority Queue for State-Aware Dijkstra.
+ * Binary Min-Heap Priority Queue for State-Aware routing.
  *
  * Provides O(log N) push and O(log N) pop operations, ensuring that the routing
  * state with the lowest cumulative cost is always expanded first.
@@ -377,7 +355,6 @@ interface QueueItem {
 export class PriorityQueue {
   private heap: QueueItem[] = [];
 
-  /** Insert a new state item into the priority queue in O(log N) time */
   push(item: QueueItem): void {
     this.heap.push(item);
     this.bubbleUp(this.heap.length - 1);
@@ -396,27 +373,22 @@ export class PriorityQueue {
     return top;
   }
 
-  /** Inspect the lowest-cost item without removing it in O(1) time */
   peek(): QueueItem | undefined {
     return this.heap[0];
   }
 
-  /** Returns true if the priority queue contains no items */
   isEmpty(): boolean {
     return this.heap.length === 0;
   }
 
-  /** Current number of elements in the priority queue */
   get size(): number {
     return this.heap.length;
   }
 
-  /** Compatible alias for length */
   get length(): number {
     return this.heap.length;
   }
 
-  /** Clears all items from the priority queue */
   clear(): void {
     this.heap = [];
   }
@@ -455,7 +427,6 @@ export class PriorityQueue {
   }
 }
 
-// Backwards compatibility alias
 export const MinHeap = PriorityQueue;
 
 interface StateTrace {
@@ -534,11 +505,9 @@ function search(
   destination: LatLng,
   pref: Preference,
   banLine?: string,
-  /** ORS-resolved access walk edges (origin -> transit stop) */
+
   accessEdges?: Edge[],
-  /** ORS-resolved egress walk edges (transit stop -> destination) keyed by placeNode id */
   egressEdges?: Map<string, Edge>,
-  /** Direct walk edge with real ORS cost (optional) */
   directWalkEdge?: Edge,
 ) {
   const ORIGIN = "ORIGIN";
@@ -694,7 +663,6 @@ function search(
 
   if (!bestDestKey || !trace.has(bestDestKey)) return null;
 
-  // Rebuild edge chain by following state transitions backwards
   const chain: { node: string; edge: Edge }[] = [];
   let cursorKey: string | undefined = bestDestKey;
   while (cursorKey && cursorKey !== startKey) {
@@ -725,7 +693,6 @@ const lineGeometries = lineGeometriesData as unknown as LineGeometryData;
 
 /**
  * Retrieves the full high-resolution road/track polyline for a given bus route or metro line.
- * If exact geometry is not in lineGeometries.json, falls back to the sequential stop points.
  */
 export function getLineFullGeometry(
   mode: "bus" | "metro",
@@ -754,9 +721,7 @@ export function getLineFullGeometry(
   return fallbackPoints;
 }
 
-/**
- * Finds the index in a polyline closest to a target coordinate.
- */
+
 function findNearestPolylineIndex(polyline: LatLng[], target: LatLng): number {
   let bestIdx = 0;
   let minD = Infinity;
@@ -871,7 +836,6 @@ function toJourney(
       }
       if (j < chain.length && chain[j]!.edge.kind === "alight") j++;
       if (dist > 0) {
-        // Build realistic curved road/track geometry between boarding & alighting stops
         const boardPt = stopPoints[0] ?? origin;
         const lastPt = stopPoints[stopPoints.length - 1] ?? destination;
         const fullGeom = getLineFullGeometry(line.mode, line.name, line.points);
@@ -1032,7 +996,6 @@ async function resolveAccessEgressEdges(
     };
   });
 
-  // Build egress edges (placeNode -> DEST)
   const egressEdges = new Map<string, Edge>();
   nearDest.forEach(({ place, d }, idx) => {
     const ors = idx < 3 ? egressResults[idx] : null;
@@ -1103,7 +1066,6 @@ export async function planJourney(
   destination: LatLng,
   preference: Preference = "balanced",
 ): Promise<{ journeys: Journey[]; error?: string }> {
-  // Pre-fetch ORS walk costs for top candidate stops
   const { accessEdges, egressEdges, directWalkEdge } =
     await resolveAccessEgressEdges(origin, destination);
 
@@ -1231,10 +1193,8 @@ export const allLines = [...net.lines.values()].map((l) => ({
   geometry: getLineFullGeometry(l.mode, l.name, l.points),
 }));
 
-/** All unique bus-stop places (for the optional overlay layer). */
 export const busStops = searchablePlaces.filter((p) => p.modes.includes("bus"));
 
-/** All unique metro-station places (for the optional overlay layer). */
 export const metroStations = searchablePlaces.filter((p) => p.modes.includes("metro"));
 
 /**
@@ -1269,8 +1229,6 @@ export async function enrichWalkLegs(
       const ors = await walkRoute(from, to);
       if (!ors) return leg; // fallback: keep original leg (already has accurate cost from planJourney)
 
-      // Only update path geometry; keep cost values unless ORS gives something very different
-      // (handles cases where planJourney used haversine fallback)
       return {
         ...leg,
         distanceM: ors.distanceM,

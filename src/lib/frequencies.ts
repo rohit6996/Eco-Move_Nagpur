@@ -1,10 +1,7 @@
 /**
  * Route-level frequency data (minutes between departures).
- * Keys match the `route` field in network.json bus routes
- * and "<line> Line" for metro lines.
- *
- * Values represent approximate average headways during daytime service.
- * Update this map whenever actual NMMT/Metro schedules change.
+ 
+
  */
 export const ROUTE_FREQUENCY_MIN: Record<string, number> = {
   // ── Bus routes (NMMT) ────────────────────────────────────────────────────
@@ -31,10 +28,7 @@ export const ROUTE_FREQUENCY_MIN: Record<string, number> = {
   "Orange Line": 10,
 };
 
-/**
- * Returns the frequency (headway) in minutes for a given transit line name.
- * Falls back to a generic city-bus estimate if the route isn't in the map.
- */
+
 export function getFrequencyMin(lineName: string): number {
   return ROUTE_FREQUENCY_MIN[lineName] ?? 20;
 }
